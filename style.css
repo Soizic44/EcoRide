@@ -1,0 +1,303 @@
+/* RESET du style par défaut du navigateur 
+que je ne souhaite pas avoir sur mon site */
+
+a {
+    color: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+button, input {
+    border-width: 0;
+    appearance: none;
+}
+
+/*Apparence générale*/
+
+body{
+    font-family: Arial, Helvetica, sans-serif
+}
+
+h1{
+    font-size: 36px;
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+/*apparence des liens boutton*/
+.lien{
+    display: inline-block;
+    background-color: #96B63E;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 15px 0;
+}
+.lien1{
+    color: #96B63E;
+    font-style: italic;
+    font-weight: bolder;
+}
+.lien2{
+    color: white;
+    font-size: 30px;
+}
+
+.lien:hover, input:hover, button:hover, .lien1:hover, .lien2:hover{
+    background-color: #CAF3CA;
+    color: rgba(0, 0, 0, 0.75);
+}
+.lien:active, button:active, .lien1:active,.lien1:active, button:active, input[type="radio"]:checked{
+    background-color: #88421D;
+}
+
+/*HEADER*/
+.header{
+    position: sticky;
+    top: 0;
+    background-color: #324400;
+}
+
+.logo{
+    width: 90px;
+}
+
+.haeder__button{
+    color: white;
+    font-size: 40px;
+}
+
+.navbar{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    color: white;
+}
+
+.navbar a{
+    font-size: 2rem;
+}
+
+/*BURGER-MENU*/
+.icon{
+    fill: white;
+    cursor: pointer;
+}
+
+/*Cacher "case à cocher" du checkbox + cacher le menu*/
+.navbar input, .menu{
+    display: none;
+}
+
+/*Afficher le menu (qui commence par "btn) en cliquant sur le Burger*/
+[id^=btn]:checked + ul{
+    display: block;
+}
+
+/*Mise en place du menu déplié*/
+.menu{
+    background-color: #324400;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    right: 0;
+}
+
+/*style du menu*/
+.nav-item a, .drop-item a, .deroulant{
+    color: white;
+    line-height: 50px;
+    font-size: 1.2rem;
+    padding: 15px;
+}
+
+/*mise en évidence de la selection*/
+.haeder__button:hover, .menu a:hover, .deroulant:hover{
+    color: #CAF3CA;
+    font-weight: bolder;
+}
+
+/*MAIN*/
+/*Stylisation MAIN*/
+main {
+    text-align: center;
+}
+
+ul.main{
+    margin-top: 10px;
+}
+
+li.main{
+    list-style: inside;
+    margin-top: 5px;
+}
+
+/*Style Bannières (HERO)*/
+.hero{
+    background-color: #324400;
+    background-size: cover;
+    padding: 10px;
+    height: 420px;
+    align-content: center;
+}
+.hero_accueil{
+    background-image: url(assets/accueil.jpg);
+    background-position: center;
+}
+
+.h2__hero {
+    color: white;
+    text-align: center;
+}
+
+/*format images autre que bannière*/
+.image__section {
+    width: 100%;
+    max-width: 550px;
+    margin-top: 5%;
+}
+
+/*Stylisation des bordures des autres Sections et du footer*/
+.description, .objet, .recherche, .informations, .footer {
+    border-style: solid;
+    border-width: 15px 20px;
+    border-color: #324400;
+    padding: 20px;
+}
+
+/*centrage des éléments du footer*/
+.footer{
+    padding: 15px;
+    background: #324400;
+    color: white;
+    text-align: center;
+    line-height: 1.3;
+    margin-top: auto;
+}
+
+.copyright{
+    text-align: center;
+    border-top: 1px solid;
+    margin-top: 15px;
+}
+.copyright p{
+    padding-top: 15px;
+}
+
+/*Stylisation barre recherche itinéraire*/
+.search{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    width: 100%;
+}
+.barre-search{
+    display: flex;
+    color: #555;
+    padding: 2px;
+    border: solid gray 1px;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+  }
+
+.icone-search{
+    width: 25px;
+    padding: 5px;
+}
+
+/*Stylisation page "Evènements"*/
+.events1{
+    text-align: justify;
+}
+
+.h4__events{
+    background-color: rgb(182, 182, 182);
+    margin-bottom: 10px;
+}
+
+
+/*MEDIA QUERIES*/
+
+/*Tablettes*/
+@media screen and (min-width: 768px){
+    
+    /*retirer le menu burger*/
+    .icon{
+        display: none;
+    } 
+    /*replacer le menu*/
+    .menu{
+        display: initial;
+        position: static;
+    }
+    /*placer les élément du menu en ligne*/
+    .nav-item{
+        display: inline-block;
+        margin-left: 10px;
+        position: relative;
+    }
+    /*positionnement section recherche*/ 
+    .recherche{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /*Determiner la taille maximum de la barre de recherche d'itinéraire*/
+    .search{
+        width: 650px; 
+    }
+}
+
+/*Tablettes en portrait*/
+@media screen and (min-width: 850px){
+
+    /*positionnement des sections*/
+    .description, .objet, .informations {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    /*dimentionnement texte et image des section en ligne*/
+    .description > div, .objet > div, .informations > div {
+        width: 40%;
+    }
+    .objet {
+        flex-direction: row-reverse;
+    } 
+    .image__section{
+        margin-top: 0;
+    }
+}
+
+/*grand écran*/
+@media screen and (min-width: 1200px){
+    /*Stylisation texte*/
+    h1{
+        font-size: 50px;
+        text-shadow: -5px 3px 3px rgb(194, 194, 194);
+    }
+    h2{
+        font-size: 32px;
+    }
+    h3{
+        font-size: 28px;
+    }
+    p{
+        font-size: 18px;
+    }
+}
