@@ -12,7 +12,7 @@ a {
     list-style: none;
 }
 
-button, input {
+button, input{
     border-width: 0;
     appearance: none;
 }
@@ -113,7 +113,7 @@ h3 {
 .menu{
     background-color: #324400;
     position: absolute;
-    top: 70px;
+    top: 75px;
     left: 50%;
     right: 0;
 }
@@ -154,15 +154,26 @@ li.main{
     padding: 10px;
     height: 420px;
     align-content: center;
-}
-.hero_accueil{
-    background-image: url(assets/accueil.jpg);
     background-position: center;
+    border-style: solid;
+    border-width: 0 0 15px 0;
+    border-color: #324400;
 }
-
 .h2__hero {
     color: white;
     text-align: center;
+}
+
+/*Image bannière*/
+.hero_accueil{
+    background-image: url(assets/accueil.jpg);
+}
+
+.hero_formulaire{
+    background-image: url(assets/formulaire.jpg);
+}
+.hero_contact{
+    background-image: url(assets/contact.jpg);
 }
 
 /*format images autre que bannière*/
@@ -171,6 +182,11 @@ li.main{
     max-width: 550px;
     margin-top: 5%;
 }
+.bgcolor{
+    background-image: url(assets/foret.jpg);
+    background-size: cover;
+    background-position: center;
+}
 
 /*Stylisation des bordures des autres Sections et du footer*/
 .description, .objet, .recherche, .informations, .footer {
@@ -178,25 +194,6 @@ li.main{
     border-width: 15px 20px;
     border-color: #324400;
     padding: 20px;
-}
-
-/*centrage des éléments du footer*/
-.footer{
-    padding: 15px;
-    background: #324400;
-    color: white;
-    text-align: center;
-    line-height: 1.3;
-    margin-top: auto;
-}
-
-.copyright{
-    text-align: center;
-    border-top: 1px solid;
-    margin-top: 15px;
-}
-.copyright p{
-    padding-top: 15px;
 }
 
 /*Stylisation barre recherche itinéraire*/
@@ -220,14 +217,59 @@ li.main{
     padding: 5px;
 }
 
-/*Stylisation page "Evènements"*/
-.events1{
-    text-align: justify;
+/*Stylisation formulaire*/
+.formulaire {
+    border-bottom: solid 1px;
+    padding: 10px;
+}
+.form_contact {
+    background-color: white;
+    margin: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
+.containForm {
+    background-color: rgb(247, 247, 247);
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: solid;
+    border-radius: 20px;
+    max-width: min-content;
+}
+.titre{
+    padding: 15px;
+}
+fieldset{
+    text-align: initial;
+    margin: 0 40px 20px;
+}
+.form-input{
+    border: solid rgb(128, 128, 128) 1px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 0;
 }
 
-.h4__events{
-    background-color: rgb(182, 182, 182);
-    margin-bottom: 10px;
+/*centrage des éléments du footer*/
+.footer{
+    padding: 15px;
+    background: #324400;
+    color: white;
+    text-align: center;
+    line-height: 1.3;
+    margin-top: auto;
+}
+
+.copyright{
+    text-align: center;
+    border-top: 1px solid;
+    margin-top: 15px;
+}
+.copyright p{
+    padding-top: 15px;
 }
 
 
@@ -282,6 +324,12 @@ li.main{
     .image__section{
         margin-top: 0;
     }
+    .destop-width{
+        width: 400px;
+    }
+    .destop{
+        width: 300px;
+    }
 }
 
 /*grand écran*/
@@ -299,5 +347,11 @@ li.main{
     }
     p{
         font-size: 18px;
+    }
+    .destop-width{
+        width: 600px;
+    }
+    .destop{
+        width: 400px;
     }
 }
