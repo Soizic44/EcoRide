@@ -31,9 +31,9 @@
             <!--Navigation principale / menu-->
             <ul class="menu">
                 <li class="nav-item"><a href="index.html">Accueil</a></li>
-                <li class="nav-item"><a href="formulaireCovoit.html">Covoiturages</a></li>
-                <li class="nav-item"><a href="contact.html">Contact</a></li>
-                <li class="nav-item"><a href="connexion.html">Connexion</a></li>
+                <li class="nav-item"><a href="pages/formulaireCovoit.html">Covoiturages</a></li>
+                <li class="nav-item"><a href="pages/contact.html">Contact</a></li>
+                <li class="nav-item"><a href="pages/authentif/connexion.html">Connexion</a></li>
             </ul>
         </nav>
         <!--END : Navbar-->
@@ -44,34 +44,35 @@
     <!--START : main-->
     <main class="main">
         <!--START : hero-->
-        <section class="hero_formulaire hero">
-            <h1>Formulaire de covoiturage</h1>
+        <section class="hero_accueil hero">
+            <h1>Connexion</h1>
         </section>
         <!--END : hero-->
-        
-        <!--START : Formulaire-->
-        <section class="recherche">   
-            <form action="" method="get">
-                <h2>Trouver votre itinéraire :</h2>
-                <br>
-                <div class="barre-search">
-                    <img class="icone-search" src="assets/mapred.png" alt="map-depart"/>
-                    <input class="search" type="search" name="start" id="start" placeholder="Adresse de départ" required>
+
+        <!--START : connexion-->
+        <section class="recherche"> 
+            <div class="containForm padding">
+                <form action="" method="post">
+                    <div class="titre pad">
+                        <label for="mail">Identifiant/mail :</label>
+                        <input class="form-input" id="mail" type="email" name="mail" placeholder="test@mail.fr" required>
+                    </div>
+                    <div class="titre pad">
+                        <label for="password">Mot de passe :</label>
+                        <input class="form-input" type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
+                    </div>
+                    <input class="lien" type="submit" value="Connexion"> 
+                </form>
+                <a href="/modifier-mp" class="lien3">Mot de passe oublié Cliquez ici</a>
+                <div class="info">
+                    <br> 
+                    <img src="assets/icones/attention.png" alt="Attention"/>
+                    <p>Cette espace est reservé aux utilisateurs et au personnel d'ECORIDE.</p>
                 </div>
-                <div class="barre-search">
-                    <img class="icone-search" src="assets/mapvert.png" alt="map-arrivee"/>
-                    <input class="search" type="search" name="arrival" id="arrival" placeholder="Aderesse d'arrivée" required>
-                </div>
-                <div class="barre-search">
-                    <input class="search" type="date" name="date" id="date" placeholder="Date de départ" required>
-                </div>
-                <div>
-                    <button class="lien" type="submit">Rechercher</button>
-                </div>
-                <br>
-            </form>
+                <br> 
+            </div> 
         </section>
-        <!--END : recherche--> 
+        <!--END : connexion--> 
     </main>
     <!--END : main-->
     
@@ -84,7 +85,7 @@
         </div>
         <div class="copyright">
             <p>Copyright © 2025 EcoRide <br>/ Tous droits réservés</p>
-            <a class="lien1" href="mentions-legales.html">Mentions légales</a>
+            <a class="lien1" href="pages/mentions-legales.html">Mentions légales</a>
         </div>
     </footer>
     <!--END : footer-->
