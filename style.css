@@ -93,6 +93,7 @@ h3 {
 .icon{
     fill: white;
     cursor: pointer;
+    font-size: 50px;
 }
 
 /*Cacher "case à cocher" du checkbox + cacher le menu*/
@@ -175,10 +176,23 @@ li.main{
     max-width: 550px;
     margin-top: 5%;
 }
+.portrait{
+    width: 40%;
+}
+
+/*couleur autre*/
 .bgcolor{
     background-image: url(assets/foret.jpg);
     background-size: cover;
     background-position: center;
+}
+.bgcolor1{
+    background-color: #88421D;
+    color: white;
+}
+.bgcolor2{
+    background-color: #324400;
+    color: white;
 }
 
 /*Stylisation des bordures des autres Sections et du footer*/
@@ -187,6 +201,10 @@ li.main{
     border-width: 15px 20px;
     border-color: #324400;
     padding: 20px;
+}
+.separation{
+    border-top: #777777 solid 1px;
+    padding-top: 10px;
 }
 
 /*Stylisation barre recherche itinéraire*/
@@ -257,6 +275,20 @@ fieldset{
     padding: 10px;
 }
 
+/*Stylisation tableau*/
+table{
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin: 20px 0;
+}
+th,td {
+  border: 1px solid rgb(160 160 160);
+  padding: 5px 10px;
+}
+
 /*centrage des éléments du footer*/
 .footer{
     padding: 15px;
@@ -309,6 +341,10 @@ fieldset{
     /*Redéfinir taille connexion*/
     .titre{
         min-width: 500px;
+    }
+    table{
+        font-size: 1.2rem;
+        margin: 20px 40px;
     }
 }
 
