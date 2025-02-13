@@ -51,42 +51,8 @@
 
         <!--START : connexion-->
         <section class="formulaire bgcolor">
-            <a href="/creation-covoit" class="lien">Ajouter</a> 
-            <div class="filtre">
-                <h2>Filtres</h2>
-                <div class="filtre_texticone liste">
-                    <label for="economique" class="filtre_icone">&#x1F697;</label>
-                    <select name="economique" id="economique" class="filtre_texte">
-                        <option value="tous" class="active">- - Economique - -</option>
-                        <option value="oui">Oui</option>
-                        <option value="non">Non</option>
-                    </select>
-                </div>
-                <div class="filtre_texticone liste">
-                    <label class="filtre_icone" for="prix">€</label>
-                    <input class="filtre_search" type="search" name="prix" id="prix" placeholder="Prix max" onkeyup="filtrer">
-                </div>
-                <div class="filtre_texticone liste">
-                    <label class="filtre_icone" for="duree">&#x23F1;</label>
-                    <input class="filtre_search" type="search" name="duree" id="duree" placeholder="Durée max">
-                </div>
-                <div class="filtre_texticone liste">
-                    <label for="note" class="filtre_icone">&#9733;</label>
-                    <select name="note" id="note" class="filtre_texte">
-                        <option value="tous" class="active">- - - Note - - -</option>
-                        <option value="1/5">1/5</option>
-                        <option value="2/5">2/5</option>
-                        <option value="3/5">3/5</option>
-                        <option value="4/5">4/5</option>
-                        <option value="5/5">5/5</option>
-                    </select>
-                </div>
-            </div>
-            <button class="bgcolor3 lien" type="button">Filtrer</button>
-        </section>
-        <section class="formulaire bgcolor">
-            <span id="output"></span>
             <div class="containForm padding card" data-set="oui" class="active">
+                <a href="/pages/covoiturage/participer.html" class="lien">Participer</a>
                 <h2>12/03/2025</h2> 
                 <div class="depart">
                     <a href="#"></a>
@@ -122,58 +88,32 @@
                 </table>
                 <div class="separation">
                     <img class="portrait" src="/assets/portrait.png" alt="portrait"/>
-                    <p>Patrick</p>
+                    <h2>Patrick</h2>
                     <p>&#9733; 5/5</p>
-                </div>
-                <div>
-                    <a class="lien bgcolor2" href="/pages/covoiturage/detail-covoit.html">Détail</a>
-                </div>
-            </div>
-            <div class="containForm padding card" data-set="non" class="active">
-                <h2>12/03/2025</h2> 
-                <div class="depart">
-                    <a href="#">
-                        <img class="icone-search" src="/assets/mapred.png" alt="map-depart"/>
-                        <span>Nantes</span> |
-                        <span>9:00</span>  
-                    </a>
-                </div>
-                <div class="arrivée">
-                    <a href="#"></a>
-                        <img class="icone-search" src="/assets/mapvert.png" alt="map-arrivee"/>
-                        <span>Vannes</span> |
-                        <span>10:30</span>  
-                    </a>
-                </div>
-                <table class="tableau">
-                    <thead>
-                        <tr>
-                            <th>Durée</th>
-                            <th>Voyage ecologique</th>
-                            <th>Nombre de place</th>
-                            <th>Prix en €</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1:30</td>
-                            <td data-set="non">non</td>
-                            <td>2</td>
-                            <td>12</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <div>
+                        <h3>Avis conducteur :</h3>
+                        <p>Super conducteur et sérieux</p>
+                    </div><br>
+                </div> 
                 <div class="separation">
-                    <img class="portrait" src="/assets/portrait.png" alt="portrait"/>
-                    <p>Jean</p>
-                    <p>&#9733; 4/5</p>
-                </div>
-                <div>
-                    <a class="lien bgcolor2" href="/pages/covoiturage/detail-covoit.html">Détail</a>
-                </div>
+                    <h2 class="pad">Infos</h2>
+                    <div class="infos">
+                        <div class="pad">
+                            <h3>Véhicule</h3>
+                            <p>Citroën</p>
+                            <p>C5</p>
+                            <p>électrique</p>
+                        </div>
+                        <div class="pad">
+                            <h3>Préférences conducteur</h3>
+                            <p>non-fumeur</p>
+                            <p>animal autorisé</p>
+                        </div>
+                    </div>
+                </div>    
             </div>
+            <a href="/pages/covoiturage/tableau-covoit.html" class="bgcolor3 lien">Retour liste</a>
         </section>
-         
         <!--END : connexion--> 
     </main>
     <!--END : main-->
