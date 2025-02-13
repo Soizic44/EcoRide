@@ -60,7 +60,7 @@ h3 {
     background-color: #CAF3CA;
     color: rgba(0, 0, 0, 0.75);
 }
-.lien:active, button:active, .lien1:active,.lien2:active,.lien3:active, button:active, input[type="radio"]:checked{
+.lien:active, button:active, .lien1:active,.lien2:active,.lien3:active, button:active, input[type="radio"]:checked, input[type="checkbox"]:checked{
     background-color: #88421D;
 }
 
@@ -171,7 +171,7 @@ li.main{
 }
 
 /*format images autre que bannière*/
-.image__section {
+.image__section{
     width: 100%;
     max-width: 550px;
     margin-top: 5%;
@@ -196,7 +196,7 @@ li.main{
 }
 
 /*Stylisation des bordures des autres Sections et du footer*/
-.description, .objet, .recherche, .informations, .footer {
+.description, .objet, .recherche, .informations, .footer{
     border-style: solid;
     border-width: 15px 20px;
     border-color: #324400;
@@ -228,11 +228,11 @@ li.main{
 }
 
 /*Stylisation formulaire*/
-.formulaire {
+.formulaire{
     border-bottom: solid 1px;
     padding: 10px;
 }
-.form_contact {
+.form_contact{
     background-color: white;
     margin: 50px;
     padding: 20px;
@@ -240,7 +240,7 @@ li.main{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     display: inline-block;
 }
-.containForm {
+.containForm{
     background-color: rgb(247, 247, 247);
     margin: auto;
     margin-top: 20px;
@@ -251,13 +251,20 @@ li.main{
 }
 fieldset{
     text-align: initial;
-    margin: 0 40px 20px;
+    margin: 10px 10px 20px 10px;   
 }
 .form-input{
     border: solid rgb(128, 128, 128) 1px;
     border-radius: 5px;
     padding: 5px;
     margin: 10px 0;
+}
+.checkbox{
+    padding: 8px;
+    border-radius: 10px;
+}
+.checkbox:hover{
+    background-color: #919684;
 }
 
 /*Connexion*/
@@ -273,6 +280,16 @@ fieldset{
 }
 .pad{
     padding: 10px;
+}
+.padLeft{
+    padding-left: 15px;
+}
+
+/*aligné un block*/
+.block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*Stylisation tableau*/
@@ -391,6 +408,12 @@ th,td {
     table{
         font-size: 1.2rem;
         margin: 20px 40px;
+    }
+    .flex{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 

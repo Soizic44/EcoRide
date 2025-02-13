@@ -45,38 +45,49 @@
     <main class="main">
         <!--START : hero-->
         <section class="hero_accueil hero">
-            <h1>Connexion</h1>
+            <h1>Création de compte</h1>
         </section>
         <!--END : hero-->
 
-        <!--START : connexion-->
+        <!--START : Création de compte utilisateur-->
         <section class="recherche"> 
             <div class="containForm padding">
                 <form action="" method="post">
-                    <div class="titre pad">
-                        <label for="mail">Identifiant/mail :</label>
-                        <input class="form-input" id="mail" type="email" name="mail" placeholder="test@mail.fr" required>
-                    </div>
-                    <div class="titre pad">
-                        <label for="password">Mot de passe :</label>
-                        <input class="form-input" type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
-                    </div>
-                    <input class="lien" type="submit" value="Connexion"> 
+                    <fieldset class="padding">
+                        <legend class="padding">Informations utilisateur</legend>
+                        <div class="titre">
+                            <label for="pseudo">Pseudo :</label>
+                            <input class="form-input" id="pseudo" type="text" name="pseudo" placeholder="Christophe" required>
+                        </div><br/>
+                    </fieldset>
+                    
+                    <fieldset class="padding">
+                        <legend class="padding">Informations connexion</legend>
+                        <div class="titre">
+                            <label for="mail">Identifiant (Email) :</label>
+                            <input class="form-input" id="mail" type="email" name="mail" placeholder="test@mail.fr" required>
+                        </div><br/>
+                        <div class="titre">
+                            <label for="password">Mot de passe :</label>
+                            <input class="form-input password" id="password" type="password" name="password" placeholder="Mot de passe" required>
+                            <div class="messageErreurMp">
+                                <a>Le mot de passe doit contenir 8 caractères minimum dont : 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial</a>
+                            </div>
+                        </div><br/>
+                        <div class="titre">
+                            <label for="validation-password">Confirmation du mot de passe :</label>
+                            <input class="form-input" type="password" id="validation-password" name="validation-password" placeholder="Mot de passe" required>
+                        </div>
+                    </fieldset>
+                    <br/>
+                    <button type="submit" class="lien bgColor2" id="btn-creation-user">Création</button>
+                    <div>
+                        <a href="/detail-covoit.html" class="lien3">Cliquer ici pour : Annuler et retourner "Détail des Covoiturages"</a>
+                    </div><br/>
                 </form>
-                <a href="/pages/authentif/modifier-mp.html" class="lien3">Mot de passe oublié Cliquez ici</a>
-                <div class="info">
-                    <br> 
-                    <img src="/assets/icones/attention.png" alt="Attention"/>
-                    <p>Cette espace est reservé aux utilisateurs et au personnel d'ECORIDE.</p>
-                </div>
-                <br>
-                <a href="/pages/authentif/creation-cpt.html" class="lien bgcolor1" id="btn-creation-user">Création compte</a>
-                <div>
-                    <a href="/index.html" class="lien3">Cliquer ici pour : Annuler et retourner à "Accueil"</a>
-                </div><br/>
-            </div> 
+            </div>
         </section>
-        <!--END : connexion--> 
+        <!--END : Création de compte utilisateur--> 
     </main>
     <!--END : main-->
     
