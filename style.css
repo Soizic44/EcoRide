@@ -274,6 +274,12 @@ fieldset{
 .checkbox:hover{
     background-color: #919684;
 }
+input.isValid{
+    border: #96B63E solid 1;
+}
+input.isInvalid{
+    border: lightcoral solid 1;
+}
 
 /*Connexion*/
 /*Style attention*/
