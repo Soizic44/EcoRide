@@ -45,36 +45,71 @@
     <main class="main">
         <!--START : hero-->
         <section class="hero_accueil hero">
-            <h1>Connexion</h1>
+            <h1>Historique des voyages</h1>
         </section>
         <!--END : hero-->
 
         <!--START : connexion-->
-        <section class="recherche"> 
-            <div class="containForm padding">
-                <form action="" method="post">
-                    <div class="titre pad">
-                        <label for="mail">Identifiant/mail :</label>
-                        <input class="form-input" id="mail" type="email" name="mail" placeholder="test@mail.fr" required>
-                    </div>
-                    <div class="titre pad">
-                        <label for="password">Mot de passe :</label>
-                        <input class="form-input" type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
-                    </div>
-                    <input class="lien" type="submit" value="Connexion"> 
-                </form>
-                <a href="/pages/authentif/modifier-mp.html" class="lien3">Mot de passe oublié Cliquez ici</a>
-                <div class="info">
-                    <br> 
-                    <img src="/assets/icones/attention.png" alt="Attention"/>
-                    <p>Cette espace est reservé aux utilisateurs et au personnel d'ECORIDE.</p>
-                </div>
-                <br>
-                <a href="/pages/authentif/creation-cpt.html" class="lien bgcolor1" id="btn-creation-user">Création compte</a>
+        <section class="formulaire bgcolor">
+            <div class="containForm padding card">
                 <div>
-                    <a href="/index.html" class="lien3">Cliquer ici pour : Annuler et retourner à "Accueil"</a>
-                </div><br/>
-            </div> 
+                    <input class="lien" type="submit" value="Démarrer">
+                    <input class="lien" type="submit" value="Arrivée à destination">
+                </div>
+                <h2 class="separation">12/03/2025</h2> 
+                <table class="tableau">
+                    <thead>
+                        <tr>
+                            <th>Durée</th>
+                            <th>Prix €</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1:20</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="depart">
+                    <a href="#"></a>
+                        <img class="icone-search" src="/assets/mapred.png" alt="map-depart"/>
+                        <span>Nantes</span> |
+                        <span>8:10</span>  
+                    </a>
+                </div>
+                <div class="arrivée">
+                    <a href="#">
+                        <img class="icone-search" src="/assets/mapvert.png" alt="map-arrivee"/>
+                        <span>Vannes</span> |
+                        <span>9:30</span>  
+                    </a>
+                </div><br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Marque</th>
+                            <th>Modèle</th>
+                            <th>Immatriculation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Citroën</td>
+                            <td>C5</td>
+                            <td>BG-825-YY</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="separation">
+                    <input class="bgcolor1 lien" type="submit" value="Annuler voyage">
+                    <a href="/pages/user/voyage/modifier-voyage.html" class="bgcolor2 lien">Modifier voyage</a>
+                </div>  
+            </div>
+            <div class="pad">
+                <a href="/pages/user/voyage/creation-voyage.html" class="lien">Ajouter 1 voyage</a>
+            </div>
+            
         </section>
         <!--END : connexion--> 
     </main>
@@ -93,5 +128,6 @@
         </div>
     </footer>
     <!--END : footer-->
+    <script src = "/js/covoiturage.js"></script>
 </body>
 </html>

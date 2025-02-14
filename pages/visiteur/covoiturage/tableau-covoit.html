@@ -31,8 +31,8 @@
             <!--Navigation principale / menu-->
             <ul class="menu">
                 <li class="nav-item"><a href="/index.html">Accueil</a></li>
-                <li class="nav-item"><a href="/pages/formulaire-covoit.html">Covoiturages</a></li>
-                <li class="nav-item"><a href="/pages/contact.html">Contact</a></li>
+                <li class="nav-item"><a href="/pages/visiteur/formulaire-covoit.html">Covoiturages</a></li>
+                <li class="nav-item"><a href="/pages/visiteur/contact.html">Contact</a></li>
                 <li class="nav-item"><a href="/pages/authentif/connexion.html">Connexion</a></li>
             </ul>
         </nav>
@@ -50,8 +50,7 @@
         <!--END : hero-->
 
         <!--START : filtre-->
-        <section class="formulaire bgcolor">
-            <a href="/creation-covoit" class="lien">Ajouter</a> 
+        <section class="formulaire bgcolor padtop">
             <form class="filtre">
                 <h2>Filtres</h2>
                 <div class="filtre_texticone liste">
@@ -85,37 +84,97 @@
             <button class="bgcolor3 lien" type="button">Filtrer</button>
         </section>
         <!--END : filtre-->
-
+        
         <!--START : Table covoiturage-->
         <section class="formulaire bgcolor">
-            <table class="filtre">
-                <tr>
-                    <th>Date</th>
-                    <th>Heure départ</th>
-                    <th>Heure arrivée</th>
-                    <th>écologique</th>
-                    <th>Image + Pseudo</th>
-                    <th>Note</th>
-                    <th>Nombre de place restante</th>
-                    <th>Prix</th>
-                    <th>Détail</th>
-                </tr>
-    
-                <tr>
-                    <td>12/03/2025</td>
-                    <td>8:10</td>
-                    <td>9:30</td>
-                    <td>oui</td>
-                    <td><img class="portrait1" src="/assets/portrait.png" alt="chauffeur"/>Thomas</td>
-                    <td>5/5</td>
-                    <td>4</td>
-                    <td>10</td>
-                    <td><a href="/detail-covoit.html"class="lien">Détail</a></td>
-                    <td><a href="/modifier-user"><img class="image-crud1" src="/assets/icones/modifier.jpg" alt="modifier"></a></td>
-                    <td><a href="/supprimer-user"><img class="image-crud1" src="/assets/icones/supprimer.jpg" alt="supprimer"></a></td>
-                </tr>
-            </table>
-        </section> 
+            <div id="result"></div>
+            <div class="containForm padding card" data-set="oui" class="active">
+                <h2>12/03/2025</h2> 
+                <div class="depart">
+                    <a href="#"></a>
+                        <img class="icone-search" src="/assets/mapred.png" alt="map-depart"/>
+                        <span>Nantes</span> |
+                        <span>8:10</span>  
+                    </a>
+                </div>
+                <div class="arrivée">
+                    <a href="#">
+                        <img class="icone-search" src="/assets/mapvert.png" alt="map-arrivee"/>
+                        <span>Vannes</span> |
+                        <span>9:30</span>  
+                    </a>
+                </div>
+                <table class="tableau">
+                    <thead>
+                        <tr>
+                            <th>Durée</th>
+                            <th>Voyage ecologique</th>
+                            <th>Nombre de place</th>
+                            <th>Prix en €</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1:20</td>
+                            <td data-set="oui">Oui</td>
+                            <td>3</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="separation">
+                    <img class="portrait" src="/assets/portrait.png" alt="portrait"/>
+                    <p>Patrick</p>
+                    <p>&#9733; 5/5</p>
+                </div>
+                <div>
+                    <a class="lien bgcolor2" href="/pages/visiteur/covoiturage/detail-covoit.html">Détail</a>
+                </div>
+            </div>
+            <div class="containForm padding card" data-set="non" class="active">
+                <h2>12/03/2025</h2> 
+                <div class="depart">
+                    <a href="#">
+                        <img class="icone-search" src="/assets/mapred.png" alt="map-depart"/>
+                        <span>Nantes</span> |
+                        <span>9:00</span>  
+                    </a>
+                </div>
+                <div class="arrivée">
+                    <a href="#"></a>
+                        <img class="icone-search" src="/assets/mapvert.png" alt="map-arrivee"/>
+                        <span>Vannes</span> |
+                        <span>10:30</span>  
+                    </a>
+                </div>
+                <table class="tableau">
+                    <thead>
+                        <tr>
+                            <th>Durée</th>
+                            <th>Voyage ecologique</th>
+                            <th>Nombre de place</th>
+                            <th>Prix en €</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1:30</td>
+                            <td data-set="non">non</td>
+                            <td>2</td>
+                            <td>12</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="separation">
+                    <img class="portrait" src="/assets/portrait.png" alt="portrait"/>
+                    <p>Jean</p>
+                    <p>&#9733; 4/5</p>
+                </div>
+                <div>
+                    <a class="lien bgcolor2" href="/pages/visiteur/covoiturage/detail-covoit.html">Détail</a>
+                </div>
+            </div>
+        </section>  
         <!--END : Table covoiturage--> 
     </main>
     <!--END : main-->
@@ -129,10 +188,10 @@
         </div>
         <div class="copyright">
             <p>Copyright © 2025 EcoRide <br>/ Tous droits réservés</p>
-            <a class="lien1" href="/pages/mentions-legales.html">Mentions légales</a>
+            <a class="lien1" href="/pages/visiteur/mentions-legales.html">Mentions légales</a>
         </div>
     </footer>
     <!--END : footer-->
-    <script src = "/pages/covoiturage/covoiturage.js"></script>
+    <script src = "/js/covoiturage.js"></script>
 </body>
 </html>

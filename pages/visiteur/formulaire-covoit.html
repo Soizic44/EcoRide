@@ -31,8 +31,8 @@
             <!--Navigation principale / menu-->
             <ul class="menu">
                 <li class="nav-item"><a href="/index.html">Accueil</a></li>
-                <li class="nav-item"><a href="/pages/formulaire-covoit.html">Covoiturages</a></li>
-                <li class="nav-item"><a href="/pages/contact.html">Contact</a></li>
+                <li class="nav-item"><a href="/pages/visiteur/formulaire-covoit.html">Covoiturages</a></li>
+                <li class="nav-item"><a href="/pages/visiteur/contact.html">Contact</a></li>
                 <li class="nav-item"><a href="/pages/authentif/connexion.html">Connexion</a></li>
             </ul>
         </nav>
@@ -45,36 +45,28 @@
     <main class="main">
         <!--START : hero-->
         <section class="hero_formulaire hero">
-            <h1>Création de Voyage</h1>
+            <h1>Formulaire de covoiturage</h1>
         </section>
         <!--END : hero-->
         
         <!--START : Formulaire-->
-        <section class="formulaire bgcolor">   
-            <form class="containForm pad" action="" method="get">
-                <h2 class="formulaire">Saisir un voyage :</h2>
+        <section class="recherche">   
+            <form action="" method="get">
+                <h2>Trouver votre itinéraire :</h2>
                 <br>
                 <div class="barre-search">
                     <img class="icone-search" src="/assets/mapred.png" alt="map-depart"/>
-                    <input class="search" type="text" name="start" id="start" placeholder="Adresse de départ" required>
+                    <input class="search" type="search" name="start" id="start" placeholder="Adresse de départ" required>
                 </div>
                 <div class="barre-search">
                     <img class="icone-search" src="/assets/mapvert.png" alt="map-arrivee"/>
-                    <input class="search" type="text" name="arrival" id="arrival" placeholder="Adresse d'arrivée" required>
+                    <input class="search" type="search" name="arrival" id="arrival" placeholder="Aderesse d'arrivée" required>
                 </div>
-                <div class="pad">
-                    <input class="form-input destop" type="date" name="date" id="date" placeholder="Date de départ" required>
+                <div class="barre-search">
+                    <input class="search widthT" type="date" name="date" id="date" placeholder="Date de départ" required>
                 </div>
-                <div class="pad">
-                    <label for="titre">Prix :</label>
-                    <input class="form-input destop" id="titre" type="text" name="titre" required>
-                </div><br/>
-                <div class="pad">
-                    <label for="titre">Choix véhicule :</label>
-                    <a href="/pages/authentif/espace-user.html" class="lien">Ajouter véhicule</a>
-                </div><br/>
-                <div> 
-                    <button class="bgcolor2 lien" type="submit">Créer voyage</button>
+                <div>
+                    <button class="lien" type="submit">Rechercher</button>
                 </div>
                 <br>
             </form>
@@ -92,7 +84,7 @@
         </div>
         <div class="copyright">
             <p>Copyright © 2025 EcoRide <br>/ Tous droits réservés</p>
-            <a class="lien1" href="/pages/mentions-legales.html">Mentions légales</a>
+            <a class="lien1" href="/pages/visiteur/mentions-legales.html">Mentions légales</a>
         </div>
     </footer>
     <!--END : footer-->

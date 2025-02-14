@@ -31,8 +31,8 @@
             <!--Navigation principale / menu-->
             <ul class="menu">
                 <li class="nav-item"><a href="/index.html">Accueil</a></li>
-                <li class="nav-item"><a href="/pages/formulaire-covoit.html">Covoiturages</a></li>
-                <li class="nav-item"><a href="/pages/contact.html">Contact</a></li>
+                <li class="nav-item"><a href="/pages/visiteur/formulaire-covoit.html">Covoiturages</a></li>
+                <li class="nav-item"><a href="/pages/visiteur/contact.html">Contact</a></li>
                 <li class="nav-item"><a href="/pages/authentif/connexion.html">Connexion</a></li>
             </ul>
         </nav>
@@ -45,11 +45,11 @@
     <main class="main">
         <!--START : hero-->
         <section class="hero_accueil hero">
-            <h1>Espace utilisateur</h1>
+            <h1>Création espace utilisateur</h1>
         </section>
         <!--END : hero-->
 
-        <!--START : Espace utilisateur-->
+        <!--START : Choix utilisateur-->
         <section class="recherche"> 
             <form action="" method="post" class="containForm padding">
                 <fieldset id="utilisateur" class="titre padding">
@@ -69,6 +69,9 @@
                   </fieldset>
             </form>
         </section>
+        <!--END : Choix utilisateur--> 
+
+        <!--START : Espace utilisateur--> 
         <section class="recherche"> 
             <form action="" method="post" class="containForm padding">
                 <fieldset id="immat" class="titre padding">
@@ -123,12 +126,11 @@
                 </fieldset>
                 <input type="submit" value="Valider" class="lien">
                 <div class="titre">
-                    <button type="submit" class="bgcolor2 lien">Modifier</button>
+                    <a href="/pages/user/modifier-user.html" class="bgcolor2 lien"><img class="image-crud1" src="/assets/icones/modifier.jpg" alt="modifier espace">Modifier espace</a>
                     <button type="button" class="bgcolor1 lien">Supprimer compte</button>
                 </div>
                 <a href="/pages/authentif/modifier-mp.html" class="lien3">Mot de passe oublié Cliquez ici</a>
-            </form> 
-            <a href="/pages/covoiturage/creation-voyage.html" class="lien">Saisir un Voyage</a> 
+            </form>  
         </section>
         <!--END : Espace utilisateur--> 
     </main>
@@ -143,7 +145,7 @@
         </div>
         <div class="copyright">
             <p>Copyright © 2025 EcoRide <br>/ Tous droits réservés</p>
-            <a class="lien1" href="/pages/mentions-legales.html">Mentions légales</a>
+            <a class="lien1" href="/pages/visiteur/mentions-legales.html">Mentions légales</a>
         </div>
     </footer>
     <!--END : footer-->

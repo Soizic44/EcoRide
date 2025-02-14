@@ -298,6 +298,9 @@ input.isInvalid{
 .padLeft{
     padding-left: 15px;
 }
+.padtop{
+    padding-top: 30px;
+}
 
 /*aligné un block*/
 .block{
@@ -314,6 +317,10 @@ table{
     font-size: 1rem;
     letter-spacing: 1px;
     margin: 20px 0;
+}
+.tableau{
+    display: inline-block;
+    align-items: center;
 }
 th,td {
   border: 1px solid rgb(160 160 160);
@@ -358,7 +365,6 @@ th,td {
     padding: 0 20px;
     border-radius: 0 25px 25px 0;
     text-align: center;
-
 }
 .filtre_search{
     border-radius: 0 25px 25px 0;
@@ -383,7 +389,6 @@ th,td {
 .copyright p{
     padding-top: 15px;
 }
-
 
 /*MEDIA QUERIES*/
 
