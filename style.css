@@ -179,6 +179,12 @@ li.main{
 .portrait{
     width: 40%;
 }
+.portrait1{
+    max-width: 80%;
+}
+.image-crud1{
+    width: 25px;
+}
 
 /*couleur autre*/
 .bgcolor{
@@ -206,13 +212,15 @@ li.main{
     border-top: #777777 solid 1px;
     padding-top: 10px;
 }
+.widthT{
+    width: 100%;
+}
 
 /*Stylisation barre recherche itinéraire*/
 .search{
     font-size: 18px;
     font-weight: bold;
     padding: 5px;
-    width: 100%;
 }
 .barre-search{
     display: flex;
