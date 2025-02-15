@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacter EcoRide</title>
+    <meta name="description" content="Contactez notre équipe EcoRide">
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="icon" href="/assets/Logo.png" type="image/png">
+</head>
+
+<body>
+    <!--START : header-->
+    <header class="header">
+
+        <!--START : Navbar-->
+        <nav class="navbar">
+            <img class="logo" src="/assets/Logo.png" alt="Logo d'EcoRide"/>
+            <a href="/index.html">EcoRide</a>
+            
+            <!--Création Burger-->
+            <label for="btn" class="icon">
+                <svg viewBox="0 0 100 80" width="40" height="40">
+                    <rect width="100" height="12"></rect>
+                    <rect y="35" width="100" height="12"></rect>
+                    <rect y="70" width="100" height="12"></rect>
+                </svg>
+            </label>
+            <input type="checkbox" id="btn">
+            
+            <!--Navigation principale / menu-->
+            <ul class="menu">
+                <li class="nav-item"><a href="/index.html">Accueil</a></li>
+                <li class="nav-item"><a href="/pages/visiteur/formulaire-covoit.html">Covoiturages</a></li>
+                <li class="nav-item"><a href="/pages/visiteur/contact.html">Contact</a></li>
+                <li class="nav-item"><a href="/pages/authentif/connexion.html">Connexion</a></li>
+            </ul>
+        </nav>
+        <!--END : Navbar-->
+
+    </header>
+    <!--END : header-->
+
+    <!--START : main-->
+    <main class="main">
+        <!--START : hero-->
+        <section class="hero_contact hero">
+            <h1>Laisser un avis</h1>
+        </section>
+        <!--END : hero-->
+
+        <!--START : Formulaire-->
+        <section class="formulaire bgcolor"> 
+            <div class="form_contact">
+                <p>Merci de remplir ce questionnaire afin de contribuer au classement de nos chauffeur.<br>
+                Nous vérifions et validons chaque avis.<br>
+                Si un covoiturage c'est mal passé, merci de nous en expliquer les raisons.</p>
+            </div>
+
+            <form class="containForm pad" action="" method="get">
+                <h2 class="formulaire">Formulaire de contact :</h2>
+                <br/>
+                <fieldset id="coordonnées" class="titre padding">
+                    <legend>Vos coordonnées</legend>
+                    <div class="pad">
+                        <label for="pseudo">Pseudo :</label>
+                        <input class="form-input destop" type="text" name="nom" id="name" placeholder="Dubois" required>
+                    </div>
+                    <div class="pad">
+                        <label for="email">Email :</label>
+                        <input class="form-input destop" type="email" id="email" name="email" placeholder="email@mail.com" required>
+                    </div>
+                </fieldset>
+
+                <fieldset id="info-voyage" class="titre pad">
+                    <legend>Informations du voyage</legend>
+                    <div class="pad">
+                        <label for="date">Date de départ :</label>
+                        <input class="form-input destop" type="date" name="date" id="date" placeholder="Date de départ" required>
+                    </div>
+                    <div class="barre-search">
+                        <img class="icone-search" src="/assets/mapred.png" alt="map-depart"/>
+                        <input class="search" type="text" name="start" id="start" placeholder="Adresse de départ" required>
+                    </div>
+                    <div class="pad">
+                        <label for="heureDep">Heure de départ :</label>
+                        <input class="form-input destop" type="time" name="heureDep" id="heureDep" placeholder="Heure de départ" required>
+                    </div>
+                    <div class="barre-search">
+                        <img class="icone-search" src="/assets/mapvert.png" alt="map-arrivee"/>
+                        <input class="search" type="text" name="arrival" id="arrival" placeholder="Adresse d'arrivée" required>
+                    </div>
+                    <div class="pad">
+                        <label for="heureArr">Heure d'arrivée :</label>
+                        <input class="form-input destop" type="time" name="heureArr" id="heureArr" placeholder="Heure d'arrivée'" required>
+                    </div>
+                </fieldset>
+        
+                <fieldset id="notation" class="titre pad">
+                    <legend>Notation</legend>
+                    <div class="pad">
+                        <label for="pseudo-conducteur">Pseudo conducteur :</label>
+                        <input class="form-input destop" id="pseudo-conducteur" type="text" name="pseudo-conducteur" required>
+                    </div><br/>
+                    <div class="padLeft">
+                        <label for="note">Note :</label>
+                        <select class="form-input" id="note" name="note" required>
+                            <option value="1">1/5</option>
+                            <option value="2">2/5</option>
+                            <option value="3">3/5</option>
+                            <option value="4">4/5</option>
+                            <option value="5">5/5</option>
+                        </select>
+                    </div><br>
+                    <div class="flex">
+                        <textarea name="message" id="message" cols="38" rows="30" placeholder="Message..." required></textarea>
+                    </div>
+                    
+                </fieldset>
+                <button class="lien" type="submit">Envoyer</button>
+            </form>
+        </section>
+        <!--END : recherche--> 
+    </main>
+    <!--END : main-->
+    
+    <!--START : footer-->
+    <footer class="footer">
+        <div class="contact">   
+            <h3>Contactez-nous :</h3>
+            <a href="mail:contact-ecoride@gmail.com" target="_blank" class="lien2">&#9993;</a>
+            <a href="mail:contact-ecoride@gmail.com" target="_blank" class="lien1">contact-ecoride@gmail.com</a>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2025 EcoRide <br>/ Tous droits réservés</p>
+            <a class="lien1" href="/pages/visiteur/mentions-legales.html">Mentions légales</a>
+        </div>
+    </footer>
+    <!--END : footer-->
+    <script src = "/js/avis.js"></script>
+</body>
+</html>
