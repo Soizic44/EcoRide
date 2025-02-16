@@ -274,11 +274,15 @@ fieldset{
 .checkbox:hover{
     background-color: #919684;
 }
-input.isValid{
-    border: #96B63E solid 1;
+input:valid{
+    border: #96B63E solid 1px;
 }
-input.isInvalid{
-    border: lightcoral solid 1;
+input:invalid{
+    border: lightcoral solid 1px;
+}
+.invalid{
+    color: red;
+    
 }
 
 /*Connexion*/
@@ -389,6 +393,7 @@ th,td {
 .copyright p{
     padding-top: 15px;
 }
+
 
 /*MEDIA QUERIES*/
 

@@ -56,7 +56,7 @@
                 Nous répondrons à vos demandes par mail.</p>
             </div>
 
-            <form class="containForm" action="" method="get">
+            <form class="containForm" action="" method="get" id="formContact">
                 <h2 class="formulaire">Formulaire de contact :</h2>
                 <br/>
                 <fieldset>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="pad">
                         <label for="email">Email :</label>
-                        <input class="form-input destop" type="email" id="email" name="email" placeholder="email@mail.com" required>
+                        <input class="form-input destop" type="email" id="email" name="email" placeholder="email@mail.com" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required>
                     </div>
                 </fieldset>
         
@@ -83,7 +83,7 @@
                     </div><br/>
                     <textarea class="form-input destop-width" name="message" id="message" cols="38" rows="30" placeholder="Message..." required></textarea>
                 </fieldset>
-                <button class="lien" type="submit">Envoyer</button>
+                <button class="lien" type="submit" id="envoiContact">Envoyer</button>
             </form>
         </section>
         <!--END : recherche--> 
@@ -103,6 +103,6 @@
         </div>
     </footer>
     <!--END : footer-->
-    <script src="/js/contact.js" type="module"></script>
+    <script src="/js/visiteur/contact.js" type="module"></script>
 </body>
 </html>

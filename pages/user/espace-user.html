@@ -51,20 +51,20 @@
 
         <!--START : Choix utilisateur-->
         <section class="recherche"> 
-            <form action="" method="post" class="containForm padding">
+            <form action="" method="post" class="containForm padding" id="formChoice">
                 <fieldset id="utilisateur" class="titre padding">
                     <legend>Choix utilisateur</legend>
-                    <div class="block">
-                        <input class="form-input checkbox" type="checkbox" id="passager" name="choix" value="passager">
-                        <label for="passager" class="padLeft">Passager</label>
-                      </div>
                     <div class="block">  
-                      <input class="form-input checkbox" type="checkbox" id="chauffeur" name="choix" value="chauffeur">
+                      <input class="form-input checkbox" type="radio" id="chauffeur" name="choix" value="chauffeur" onclick="afficheForm()">
                       <label for="chauffeur" class="padLeft">Chauffeur</label>
                     </div>
                     <div class="block">
-                      <input class="form-input checkbox" type="checkbox" id="les-2" name="choix" value="les-2">
-                      <label for="les-2" class="padLeft">Les Deux</label>
+                        <input class="form-input checkbox" type="radio" id="passager" name="choix" value="passager" onclick="maskForm()">
+                        <label for="passager" class="padLeft">Passager</label>
+                      </div>
+                    <div class="block">  
+                        <input class="form-input checkbox" type="radio" id="les2" name="choix" value="les2" onclick="afficheForm()">
+                        <label for="les2" class="padLeft">Les Deux</label>
                     </div>
                   </fieldset>
             </form>
@@ -73,7 +73,7 @@
 
         <!--START : Espace utilisateur--> 
         <section class="recherche"> 
-            <form action="" method="post" class="containForm padding">
+            <form action="" method="post" class="containForm padding chauffeur" id="formUser">
                 <fieldset id="immat" class="titre padding">
                     <legend>Immatriculation</legend>
                     <div class="padLeft">
@@ -124,10 +124,10 @@
                         <textarea name="ajoutPref" id="ajoutPref" cols="28" rows="15" placeholder="Autre préférences..."></textarea>
                     </div>   
                 </fieldset>
-                <input type="submit" value="Valider" class="lien">
+                <input type="submit" value="Valider" class="lien" id="envoiCreateUser">
                 <div class="titre">
                     <a href="/pages/user/modifier-user.html" class="bgcolor2 lien"><img class="image-crud1" src="/assets/icones/modifier.jpg" alt="modifier espace">Modifier espace</a>
-                    <button type="button" class="bgcolor1 lien">Supprimer compte</button>
+                    <button type="button" class="bgcolor1 lien" id="btValidation">Supprimer compte</button>
                 </div>
                 <a href="/pages/authentif/modifier-mp.html" class="lien3">Mot de passe oublié Cliquez ici</a>
             </form>  
@@ -149,5 +149,6 @@
         </div>
     </footer>
     <!--END : footer-->
+    <script src="/js/user/espace-user.js"></script>
 </body>
 </html>
