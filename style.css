@@ -116,11 +116,18 @@ h3 {
 }
 
 /*style du menu*/
-.nav-item a, .drop-item a{
+.nav-item a, .drop-item a, .nav-link{
     color: white;
     line-height: 50px;
     font-size: 1.2rem;
     padding: 15px;
+}
+.nav-link{
+    list-style: none;
+    text-decoration: inherit;
+    background-color: inherit;
+    margin: inherit;
+    padding: inherit;
 }
 
 /*mise en évidence de la selection*/
@@ -282,7 +289,7 @@ input:invalid{
 }
 .invalid{
     color: red;
-    
+
 }
 
 /*Connexion*/
@@ -415,6 +422,7 @@ th,td {
         margin-left: 10px;
         position: relative;
     }
+
     /*positionnement section recherche*/ 
     .recherche{
         display: flex;
