@@ -1,14 +1,14 @@
 //Implémenter le JS de ma page
 const form = document.getElementById("formContact");
 const inputNom = document.getElementById("name");
-const inputPreNom = document.getElementById("firstname");
+const inputPrenom = document.getElementById("firstname");
 const inputMail = document.getElementById("email");
 const inputTitre = document.getElementById("titre");
 const inputMessage = document.getElementById("message");
 const btnValidation = document.getElementById("envoiContact");
 
 inputNom.addEventListener("keyup", validateForm); 
-inputPreNom.addEventListener("keyup", validateForm);
+inputPrenom.addEventListener("keyup", validateForm);
 inputMail.addEventListener("keyup", validateForm);
 inputTitre.addEventListener("keyup", validateForm);
 inputMessage.addEventListener("keyup", validateForm);
@@ -17,7 +17,7 @@ inputMessage.addEventListener("keyup", validateForm);
 //Function permettant de valider tout le formulaire
 function validateForm(){
     const nomOk = validateRequired(inputNom);
-    const prenomOk = validateRequired(inputPreNom);
+    const prenomOk = validateRequired(inputPrenom);
     const mailOk = validateMail(inputMail);
     const titreOk = validateMail(inputTitre);
     const messageOk = validateMail(inputMessage);

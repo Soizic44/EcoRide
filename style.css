@@ -24,6 +24,10 @@ h1{
     color: white;
     text-align: center;
 }
+.h1_404{
+    color: inherit;
+    text-align: inherit;
+}
 h3 {
     text-decoration: underline;
 }
@@ -311,6 +315,13 @@ input:invalid{
 }
 .padtop{
     padding-top: 30px;
+}
+
+/*en cas de peu de contenu (page 404): garder footer en bas de page (margin-top: auto pour footer)*/
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 /*aligné un block*/
