@@ -1,10 +1,12 @@
 //Implémenter le JS de ma page
 const mailInput = document.getElementById("mail");
 const passwordInput = document.getElementById("password");
-const btnConnexion = document.getElementById("btnConnexion");
+const btnSingin = document.getElementById("btnConnexion");
 
 mailInput.addEventListener("keyup", validateForm);
 passwordInput.addEventListener("keyup", validateForm);
+btnSingin.addEventListener("click", checkCredentials);
+
 
 //Function permettant de valider les input
 function validateForm(){
@@ -31,10 +33,10 @@ function validateForm(){
     const passwordOk = validateMp(passwordInput);
 
     if(mailOk && passwordOk){
-        btnConnexion.disabled = false;
+        btnSingin.disabled = false;
     }
     else{
-        btnConnexion.disabled = true;
+        btnSingin.disabled = true;
     }
 }
 
@@ -71,16 +73,16 @@ function validateMp(input){
     }
 }
 
-btnConnexion.addEventListener("click", checkCredentials);
 function checkCredentials(){
     //Ici, il faudra appeler l'API pour vérifier les credentials en BDD
 
-    if(mailInput.value == "test@mail.com" && passwordInput.value == "123"){
+    if(mailInput.value == "test@mail.com" && passwordInput.value == "12Abc?/ab"){
         //Il faudra récupérer le vrai token
         const token = "lkjsdngfljsqdnglkjsdbglkjqskjgkfjgbqslkfdgbskldfgdfgsdgf";
         setToken(token);
         //placer ce token en cookie
         
+        setCookie(RoleCookieName, "admin", 7);
         window.location.replace("/");
     }
     else{
