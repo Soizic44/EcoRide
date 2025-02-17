@@ -1,23 +1,32 @@
 //Gestion de la connexion
 const tokenCookieName = "accesstoken";
+const RoleCookieName = "role";
 const signoutBtn = document.getElementById("deconnexion");
 
 signoutBtn.addEventListener("click", signout);
 
+function getRole(){
+    return getCookie(RoleCookieName);
+}
+
 function signout(){
     eraseCookie(tokenCookieName);
+    eraseCookie(RoleCookieName);
     window.location.reload();
 }
 
+//Placer le token en cookie
 function setToken(token){
     setCookie(tokenCookieName, token, 7);
 }
+
+//pour retourner le cookie du token
 function getToken(){
     return getCookie(tokenCookieName);
 }
 
 //Méthode pour gestion des cookies
-function setCookie(name,value,days) {
+function setCookie(name,value,days){
     var expires = "";
     if (days) {
         var date = new Date();
@@ -26,7 +35,7 @@ function setCookie(name,value,days) {
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
-function getCookie(name) {
+function getCookie(name){
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
     for(var i=0;i < ca.length;i++) {
@@ -36,7 +45,7 @@ function getCookie(name) {
     }
     return null;
 }
-function eraseCookie(name) {   
+function eraseCookie(name){   
     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
@@ -49,10 +58,53 @@ function isConnected(){
         return true;
     }
 }
-
 if(isConnected()){
     alert("je suis connecté");
 }
 else{
     alert("je ne suis pas connecté");
+}
+
+/*
+disconnected (visiteur)
+connected (admin, employé ou utilisateur)
+    - admin
+    - employé
+    - utilisateur/user (chauffeur ou passager)
+*/
+function showAndHideElementsForRoles(){
+    const userConnected = isConnected();
+    const role = getRole();
+
+    let allElementsToEdit = document.querySelectorAll('[data-show]');
+
+    allElementsToEdit.forEach(element =>{
+        switch(element.dataset.show){
+            case 'disconnected':
+                if(userConnected){
+                    element.classList.add("d-none");
+                }
+                break;
+            case 'connected': 
+                if(!userConnected){
+                    element.classList.add("d-none");
+                }
+                break;
+            case 'admin': 
+                if(!userConnected || role != "admin"){
+                    element.classList.add("d-none");
+                }
+                break;
+            case 'employe': 
+                if(!userConnected || role != "employe"){
+                    element.classList.add("d-none");
+                }
+                break;
+            case 'user': 
+                if(!userConnected || role != "user"){
+                    element.classList.add("d-none");
+                }
+                break;
+        }
+    })
 }

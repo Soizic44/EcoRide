@@ -104,6 +104,10 @@ h3 {
 .navbar input, .menu{
     display: none;
 }
+/*cacher 1 élément*/
+.d-none{
+    display: none;
+}
 
 /*Afficher le menu (qui commence par "btn) en cliquant sur le Burger*/
 [id^=btn]:checked + ul{
@@ -127,7 +131,6 @@ h3 {
     padding: 15px;
 }
 .nav-link{
-    list-style: none;
     text-decoration: inherit;
     background-color: inherit;
     margin: inherit;
@@ -288,12 +291,14 @@ fieldset{
 input:valid{
     border: #96B63E solid 1px;
 }
+.valid{
+    color: #96B63E;
+}
 input:invalid{
     border: lightcoral solid 1px;
 }
 .invalid{
     color: red;
-
 }
 
 /*Connexion*/
@@ -312,6 +317,9 @@ input:invalid{
 }
 .padLeft{
     padding-left: 15px;
+}
+.padLeft1{
+    padding-left: 8px;
 }
 .padtop{
     padding-top: 30px;
@@ -458,7 +466,9 @@ th,td {
         flex-wrap: wrap;
         justify-content: space-between;
     }
-}
+    .d-none{
+        display: none;
+    }
 
 /*Tablettes en portrait*/
 @media screen and (min-width: 850px){

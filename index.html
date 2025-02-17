@@ -30,11 +30,21 @@
             
             <!--Navigation principale / menu-->
             <ul class="menu">
-                <li class="nav-item"><a href="/">Accueil</a></li>
-                <li class="nav-item"><a href="/formulaire-covoit">Covoiturages</a></li>
-                <li class="nav-item"><a href="/contact">Contact</a></li>
-                <li class="nav-item"><a href="/connexion">Connexion</a></li>
-                <li class="nav-item"><button class="nav-link" type="button" id="deconnexion">Déconnexion</button></li>
+                <li class="nav-item">
+                    <a href="/">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/formulaire-covoit">Covoiturages</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact">Contact</a>
+                </li>
+                <li class="nav-item" data-show="disconnected">
+                    <a href="/connexion">Connexion</a>
+                </li>
+                <li class="nav-item padLeft1" data-show="connected">
+                    <button class="nav-link" type="button" id="deconnexion">Déconnexion</button>
+                </li>
             </ul>
         </nav>
         <!--END : Navbar-->
@@ -62,6 +72,7 @@
     </footer>
     <!--END : footer-->
 
+    <script src="/js/script.js"></script>
     <script type="module" src="/Router/router.js"></script>
 </body>
 </html>
