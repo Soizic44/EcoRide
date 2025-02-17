@@ -58,12 +58,6 @@ function isConnected(){
         return true;
     }
 }
-if(isConnected()){
-    alert("je suis connecté");
-}
-else{
-    alert("je ne suis pas connecté");
-}
 
 /*
 disconnected (visiteur)
