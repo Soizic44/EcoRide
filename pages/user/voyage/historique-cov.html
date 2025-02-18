@@ -8,8 +8,8 @@
 <section class="formulaire bgcolor">
     <div class="containForm padding card">
         <div>
-            <input class="lien" type="submit" value="Démarrer">
-            <input class="lien" type="submit" value="Arrivée à destination">
+            <input id="start" class="lien" type="submit" value="Démarrer" data-show="chauffeur" onclick="maskStart()">
+            <input id="stop" class="lien d-none" type="submit" value="Arrivée à destination" data-show="chauffeur" onclick="annulerDemarrer()">
         </div>
         <h2 class="separation">12/03/2025</h2> 
         <table class="tableau">
@@ -58,11 +58,12 @@
         </table>
         <div class="separation">
             <input class="bgcolor1 lien" type="submit" value="Annuler voyage">
-            <a href="/modifier-voyage" class="bgcolor2 lien">Modifier voyage</a>
+            <a href="/modifier-voyage" class="bgcolor2 lien" data-show="chauffeur">Modifier voyage</a>
+            <a href="/avis" class="bgcolor2 lien" data-show="passager">Laisser un avis</a>
         </div>  
     </div>
     <div class="pad">
-        <a href="/creation-voyage" class="lien">Ajouter 1 voyage</a>
+        <a href="/creation-voyage" class="lien" data-show="chauffeur">Ajouter 1 voyage</a>
     </div>
     
 </section>

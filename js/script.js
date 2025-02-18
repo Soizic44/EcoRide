@@ -64,14 +64,13 @@ disconnected (visiteur)
 connected (admin, employé ou utilisateur)
     - admin
     - employé
-    - utilisateur/user (chauffeur ou passager)
+    - utilisateur/user : chauffeur et/ou passager
 */
 function showAndHideElementsForRoles(){
     const userConnected = isConnected();
     const role = getRole();
 
     let allElementsToEdit = document.querySelectorAll('[data-show]');
-
     allElementsToEdit.forEach(element =>{
         switch(element.dataset.show){
             case 'disconnected':
@@ -94,11 +93,16 @@ function showAndHideElementsForRoles(){
                     element.classList.add("d-none");
                 }
                 break;
-            case 'user': 
-                if(!userConnected || role != "user"){
+            case 'chauffeur': 
+                if(!userConnected || role != "chauffeur"){
                     element.classList.add("d-none");
                 }
                 break;
+            case 'passager': 
+                if(!userConnected || role != "passager"){
+                    element.classList.add("d-none");
+                }
+                break;    
         }
     })
 }

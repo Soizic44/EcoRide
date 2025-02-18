@@ -300,6 +300,11 @@ input:invalid{
 .invalid{
     color: red;
 }
+.star{
+    font-size: 25px;
+    padding: 20px;
+    display: inline-flex;
+}
 
 /*Connexion*/
 /*Style attention*/
