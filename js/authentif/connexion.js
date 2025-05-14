@@ -57,7 +57,7 @@ function validateMail(input){
     }
 }
 
-//Définir mon regex
+//Définir mon regex mot de passe
 function validateMp(input){
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
     const passwordUser = input.value;
@@ -73,6 +73,7 @@ function validateMp(input){
     }
 }
 
+//Gestion de la connexion
 function checkCredentials(){
     //Ici, il faudra appeler l'API pour vérifier les credentials en BDD
 
