@@ -216,7 +216,7 @@ li.main{
 }
 
 /*Stylisation des bordures des autres Sections et du footer*/
-.description, .objet, .recherche, .informations, .footer{
+.description, .objet, .recherche, .informations, .footer, .connexion{
     border-style: solid;
     border-width: 15px 20px;
     border-color: #324400;
