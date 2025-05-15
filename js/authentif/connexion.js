@@ -10,8 +10,8 @@ btnSingin.addEventListener("click", checkCredentials);
 
 //Function permettant de valider les input
 function validateForm(){
-    validateRequired(mailInput);
-    validateRequired(passwordInput);
+    validateMail(mailInput);
+    validateMp(passwordInput);
 }
 
 function validateRequired(input){

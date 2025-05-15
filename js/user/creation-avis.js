@@ -1,27 +1,42 @@
 //Implémenter le JS de ma page
-const inputNom = document.getElementById("name");
-const inputPrenom = document.getElementById("firstname");
+const inputPseudo = document.getElementById("name");
 const inputMail = document.getElementById("email");
-const inputTitre = document.getElementById("titre");
+const inputDate = document.getElementById("date");
+const inputStart = document.getElementById("start");
+const inputHeureDep = document.getElementById("heureDep");
+const inputArrival = document.getElementById("arrival");
+const inputHeureArr = document.getElementById("heureArr");
+const inputPseudoCond = document.getElementById("pseudo-conducteur");
+const inputNote = document.getElementById("note");
 const inputMessage = document.getElementById("message");
-const btnValidation = document.getElementById("envoiContact");
+const btnValidation = document.getElementById("envoiAvis");
 
-inputNom.addEventListener("keyup", validateForm); 
-inputPrenom.addEventListener("keyup", validateForm);
+inputPseudo.addEventListener("keyup", validateForm); 
 inputMail.addEventListener("keyup", validateForm);
-inputTitre.addEventListener("keyup", validateForm);
+inputDate.addEventListener("keyup", validateForm);
+inputStart.addEventListener("keyup", validateForm);
+inputHeureDep.addEventListener("keyup", validateForm);
+inputArrival.addEventListener("keyup", validateForm);
+inputHeureArr.addEventListener("keyup", validateForm);
+inputPseudoCond.addEventListener("keyup", validateForm);
+inputNote.addEventListener("keyup", validateForm);
 inputMessage.addEventListener("keyup", validateForm);
 
 
 //Function permettant de valider tout le formulaire
 function validateForm(){
-    const nomOk = validateRequired(inputNom);
-    const prenomOk = validateRequired(inputPrenom);
+    const pseudoOk = validateRequired(inputPseudo);
     const mailOk = validateMail(inputMail);
-    const titreOk = validateRequired(inputTitre);
+    const dateOk = validateRequired(inputDate);
+    const startOk = validateRequired(inputStart);
+    const heureDepOk = validateRequired(inputHeureDep);
+    const arrivalOk = validateRequired(inputArrival);
+    const heureArrOk = validateRequired(inputHeureArr);
+    const pseudoCondOk = validateRequired(inputPseudoCond);
+    const noteOk = validateRequired(inputNote);
     const messageOk = validateMessage(inputMessage);
 
-    if(nomOk && prenomOk && mailOk && titreOk && messageOk){
+    if(pseudoOk && mailOk && dateOk && startOk && heureDepOk && arrivalOk && heureArrOk && pseudoCondOk && noteOk && messageOk){
         btnValidation.disabled = false;
     }
     else{
@@ -61,7 +76,7 @@ function validateMail(input){
 
 //Définir mon regex message
 function validateMessage(input){
-    const messageRegex = /^(?=.{10,})[a-zA-Z0-9\s\-,]+.\*?$/;
+    const messageRegex = /^(?=.{8,})[a-zA-Z0-9\s\-,]+.\*?$/;
     const messageContact = input.value;
 
     if(messageContact.match(messageRegex)){
