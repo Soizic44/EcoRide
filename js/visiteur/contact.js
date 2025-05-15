@@ -12,6 +12,7 @@ inputPrenom.addEventListener("keyup", validateForm);
 inputMail.addEventListener("keyup", validateForm);
 inputTitre.addEventListener("keyup", validateForm);
 inputMessage.addEventListener("keyup", validateForm);
+btnValidation.addEventListener("click", checkCredentials);
 
 
 //Function permettant de valider tout le formulaire
@@ -19,8 +20,8 @@ function validateForm(){
     const nomOk = validateRequired(inputNom);
     const prenomOk = validateRequired(inputPrenom);
     const mailOk = validateMail(inputMail);
-    const titreOk = validateMail(inputTitre);
-    const messageOk = validateMail(inputMessage);
+    const titreOk = validateTitre(inputTitre);
+    const messageOk = validateMessage(inputMessage);
 
     if(nomOk && prenomOk && mailOk && titreOk && messageOk){
         btnValidation.disabled = false;
@@ -60,3 +61,19 @@ function validateMail(input){
     }
 }
 
+//Définir mon regex message
+function validateMessage(input){
+    const messageRegex = /^(?=.{10,})[a-zA-Z0-9\s\-,]+.\*?$/;
+    const messageContact = input.value;
+
+    if(messageContact.match(messageRegex)){
+        input.classList.add("valid");
+        input.classList.remove("invalid"); 
+        return true;
+    }
+    else{
+        input.classList.remove("valid");
+        input.classList.add("invalid");
+        return false;
+    }
+}
