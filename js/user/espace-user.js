@@ -19,7 +19,6 @@ inputCouleur.addEventListener("keyup", validateForm);
 inputPlaces.addEventListener("keyup", validateForm); 
 inputFumeur.addEventListener("keyup", validateForm);
 inputAnimal.addEventListener("keyup", validateForm);
-btnValidation.addEventListener("click", checkCredentials);
 
 
 //Function permettant de valider tout le formulaire

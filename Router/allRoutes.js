@@ -2,9 +2,9 @@ import Route from "./Route.js";
 
 //Définir ici vos routes
 export const allRoutes = [
-    new Route("/", "Accueil", "/pages/visiteur/accueil.html", []),
+    new Route("/", "Accueil", "/pages/visiteur/accueil.html", [], "/js/visiteur/accueil.js"),
     new Route("/mentions-legales", "Mentions légales", "/pages/visiteur/mentions-legales.html", []),
-    new Route("/formulaire-covoit", "Formulaire de covoiturage", "/pages/visiteur/formulaire-covoit.html", []),
+    new Route("/formulaire-covoit", "Formulaire de covoiturage", "/pages/visiteur/formulaire-covoit.html", [], "/js/visiteur/formulaire-covoit.js"),
     new Route("/tableau-covoit", "Covoiturage disponibles", "/pages/visiteur/covoiturage/tableau-covoit.html", []),
     new Route("/detail-covoit", "Détail du covoiturage", "/pages/visiteur/covoiturage/detail-covoit.html", []),
     new Route("/contact", "contact", "/pages/visiteur/contact.html", [], "/js/visiteur/contact.js"),

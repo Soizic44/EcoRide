@@ -2,7 +2,7 @@
 const inputStart = document.getElementById("start");
 const inputArrival = document.getElementById("arrival");
 const inputDate = document.getElementById("date");
-const btnValidation = document.getElementById("searchItineraire");
+const btnValidation = document.getElementById("searchItiner");
 
 inputStart.addEventListener("keyup", validateForm); 
 inputArrival.addEventListener("keyup", validateForm);
