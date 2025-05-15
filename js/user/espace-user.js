@@ -81,9 +81,9 @@ function maskForm(){
 
 //méthode permettant d'afficher le champ si "chauffeur et passager" sélectionné
 document.getElementById('les2').change = function(){ 
-    afficheForm('.les2', this.checked); 
+    afficheForm1('.les2', this.checked); 
 }
-function afficheForm(){
+function afficheForm1(){
     if (form1.les2.checked){
         document.getElementById("formUser").style.display ="block";
     } 
@@ -91,9 +91,4 @@ function afficheForm(){
         document.getElementById("formUser").style.display ="null";
     }
 }
-
-
-
-
-
 

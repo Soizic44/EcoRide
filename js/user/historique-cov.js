@@ -20,7 +20,7 @@ function maskStart(){
     }
 }
 
-//méthode permettant d'annuler le "Démarrer"
+//méthode permettant d'annuler le "Démarrer" pour signaler l'arrivée à destination
 document.getElementById('stop').change = function(){ 
     annulerDemarrer('.stop', this.checked); 
 }
