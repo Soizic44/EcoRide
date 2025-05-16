@@ -9,7 +9,7 @@ export const allRoutes = [
     new Route("/detail-covoit", "Détail du covoiturage", "/pages/visiteur/covoiturage/detail-covoit.html", []),
     new Route("/contact", "contact", "/pages/visiteur/contact.html", [], "/js/visiteur/contact.js"),
     new Route("/connexion", "connexion", "/pages/authentif/connexion.html", ["disconnected"], "/js/authentif/connexion.js"),
-    new Route("/creation-cpt", "Création de compte", "/pages/authentif/creation-cpt.html", ["disconnected"]),
+    new Route("/creation-cpt", "Création de compte", "/pages/authentif/creation-cpt.html", ["disconnected"], "/js/authentif/creation-cpte.js"),
     new Route("/modifier-mp", "Modifier mon mot de passe", "/pages/authentif/modifier-mp.html", ["disconnected"]),
     new Route("/espace-user", "Espace utilisateur", "/pages/user/creat-espace-user.html", ["disconnected", "chauffeur", "passager"], "/js/user/espace-user.js"),
     new Route("/modifier-user", "Modifier utilisateur", "/pages/user/modifier-user.html", ["disconnected", "chauffeur", "passager"]),

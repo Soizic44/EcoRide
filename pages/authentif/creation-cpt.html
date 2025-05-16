@@ -24,14 +24,17 @@
                 </div><br/>
                 <div class="titre">
                     <label for="password">Mot de passe :</label>
-                    <input class="form-input password" id="password" type="password" name="password" placeholder="Mot de passe" required>
-                    <div class="messageErreurMp">
-                        <a>Le mot de passe doit contenir 8 caractères minimum dont : 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial</a>
+                    <input class="form-input" id="password" type="password" name="password" placeholder="Mot de passe" required>
+                    <div class="feedback">
+                        <a>! Le mot de passe doit contenir 8 caractères minimum dont : 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial !</a>
                     </div>
                 </div><br/>
                 <div class="titre">
-                    <label for="validation-password">Confirmation du mot de passe :</label>
-                    <input class="form-input" type="password" id="validation-password" name="validation-password" placeholder="Mot de passe" required>
+                    <label for="confirmPw">Confirmation du mot de passe :</label>
+                    <input class="form-input" type="password" id="confirmPw" name="confirmPw" placeholder="Confirmer Mot de passe" required>
+                    <div class="feedback">
+                        <a>! La confirmation doit être identique au mot de passe !</a>
+                    </div>
                 </div>
             </fieldset>
             <br/>

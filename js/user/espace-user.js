@@ -53,7 +53,7 @@ function validateRequired(input){
     }
 }
 
-//méthode permettant d'afficher le champ si "chauffeur"
+//méthode permettant d'afficher le block si "chauffeur"
 document.getElementById('chauffeur').change = function(){ 
     afficheForm('.chauffeur', this.checked); 
 }  
@@ -79,7 +79,7 @@ function maskForm(){
     }
 }
 
-//méthode permettant d'afficher le champ si "chauffeur et passager" sélectionné
+//méthode permettant d'afficher le block si "chauffeur et passager" sélectionné
 document.getElementById('les2').change = function(){ 
     afficheForm1('.les2', this.checked); 
 }

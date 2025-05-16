@@ -279,7 +279,7 @@ fieldset{
     border: solid rgb(128, 128, 128) 1px;
     border-radius: 5px;
     padding: 5px;
-    margin: 10px 0;
+    margin: 10px 5px;
 }
 .checkbox{
     padding: 8px;
@@ -304,6 +304,13 @@ input:invalid{
     font-size: 25px;
     padding: 20px;
     display: inline-flex;
+}
+textarea {
+    width: 90%;
+    font-size: 1em;
+    flex-grow: 0.9em;
+    border-radius: 5px;
+    padding: 1%;
 }
 
 /*Connexion*/
@@ -423,6 +430,11 @@ th,td {
 }
 .copyright p{
     padding-top: 15px;
+}
+
+/*classes d'animations pour JavaScript*/
+.feedback{
+    color: #dc3545;
 }
 
 
