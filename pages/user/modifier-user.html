@@ -6,20 +6,20 @@
 
 <!--START : Choix utilisateur-->
 <section class="recherche"> 
-    <form action="" method="post" class="containForm padding">
+    <form action="" method="post" class="containForm padding" id="formChoice">
         <fieldset id="utilisateur" class="titre padding">
             <legend>Choix utilisateur</legend>
-            <div class="block">
-                <input class="form-input checkbox" type="checkbox" id="passager" name="choix" value="passager">
-                <label for="passager" class="padLeft">Passager</label>
-              </div>
             <div class="block">  
-              <input class="form-input checkbox" type="checkbox" id="chauffeur" name="choix" value="chauffeur">
+              <input class="form-input checkbox" type="radio" id="chauffeur" name="choix" value="chauffeur" onclick="afficheForm()">
               <label for="chauffeur" class="padLeft">Chauffeur</label>
             </div>
             <div class="block">
-              <input class="form-input checkbox" type="checkbox" id="les-2" name="choix" value="les-2">
-              <label for="les-2" class="padLeft">Les Deux</label>
+                <input class="form-input checkbox" type="radio" id="passager" name="choix" value="passager" onclick="maskForm()">
+                <label for="passager" class="padLeft">Passager</label>
+              </div>
+            <div class="block">  
+                <input class="form-input checkbox" type="radio" id="les2" name="choix" value="les2" onclick="afficheForm1()">
+                <label for="les2" class="padLeft">Les Deux</label>
             </div>
           </fieldset>
     </form>
@@ -28,7 +28,7 @@
 
 <!--START : Espace utilisateur--> 
 <section class="recherche"> 
-    <form action="" method="post" class="containForm padding">
+    <form action="" method="post" class="containForm padding" id="formUser">
         <fieldset id="immat" class="titre padding">
             <legend>Immatriculation</legend>
             <div class="padLeft">

@@ -12,7 +12,7 @@ export const allRoutes = [
     new Route("/creation-cpt", "Création de compte", "/pages/authentif/creation-cpt.html", ["disconnected"], "/js/authentif/creation-cpte.js"),
     new Route("/modifier-mp", "Modifier mon mot de passe", "/pages/authentif/modifier-mp.html", ["disconnected"], "/js/authentif/modifier-mp.js"),
     new Route("/espace-user", "Espace utilisateur", "/pages/user/creat-espace-user.html", ["disconnected", "chauffeur", "passager"], "/js/user/espace-user.js"),
-    new Route("/modifier-user", "Modifier utilisateur", "/pages/user/modifier-user.html", ["disconnected", "chauffeur", "passager"]),
+    new Route("/modifier-user", "Modifier utilisateur", "/pages/user/modifier-user.html", ["disconnected", "chauffeur", "passager"], "/js/user/modifier-user.js"),
     new Route("/creation-voyage", "Créer un voyage", "/pages/user/voyage/creation-voyage.html", ["disconnected", "chauffeur", "passager"], "/js/user/creation-voyage.js"),
     new Route("/modifier-voyage", "Modifier un voyage", "/pages/user/voyage/modifier-voyage.html", ["disconnected", "chauffeur", "passager"]),
     new Route("/historique-cov", "Historique des voyages", "/pages/user/voyage/historique-cov.html", ["disconnected"], "/js/user/historique-cov.js"),
