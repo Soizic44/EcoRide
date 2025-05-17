@@ -9,14 +9,24 @@
     <div class="containForm padding">
         <form action="" method="post">
             <div class="titre pad">
-                <label for="password">Mot de passe :</label>
-                <input class="form-input" type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
+                <label for="mail">Identifiant (Email) :</label>
+                <input class="form-input" id="mail" type="email" name="mail" placeholder="test@mail.fr" required>
             </div>
             <div class="titre pad">
-                <label for="validation-password">Confirmation mot de passe :</label>
-                <input class="form-input" type="password" id="validation-password" name="validation-password" placeholder="Confirmation Mot de Passe">
-            </div>
-            <input class="lien" type="submit" value="Changer mot de passe"> 
+                    <label for="password">Mot de passe :</label>
+                    <input class="form-input" id="password" type="password" name="password" placeholder="Mot de passe" required>
+                    <div class="feedback">
+                        <a>! Le mot de passe doit contenir 8 caractères minimum dont : 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial !</a>
+                    </div>
+                </div><br/>
+                <div class="titre pad">
+                    <label for="confirmPw">Confirmation du mot de passe :</label>
+                    <input class="form-input" type="password" id="confirmPw" name="confirmPw" placeholder="Confirmer Mot de passe" required>
+                    <div class="feedback">
+                        <a>! La confirmation doit être identique au mot de passe !</a>
+                    </div>
+                </div>
+            <input class="lien" type="submit" value="Changer mot de passe" id="btn-changeMp"> 
         </form>
         <div class="info">
             <a href="/modifier-user" class="lien3">Cliquer ici pour "Modifier mes informations personnelles".</a>

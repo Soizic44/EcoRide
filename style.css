@@ -295,7 +295,7 @@ input:valid{
     color: #96B63E;
 }
 input:invalid{
-    border: lightcoral solid 1px;
+    border: red solid 1px;
 }
 .invalid{
     color: red;
