@@ -10,14 +10,14 @@ export const allRoutes = [
     new Route("/contact", "contact", "/pages/visiteur/contact.html", [], "/js/visiteur/contact.js"),
     new Route("/connexion", "connexion", "/pages/authentif/connexion.html", ["disconnected"], "/js/authentif/connexion.js"),
     new Route("/creation-cpt", "Création de compte", "/pages/authentif/creation-cpt.html", ["disconnected"], "/js/authentif/creation-cpte.js"),
-    new Route("/modifier-mp", "Modifier mon mot de passe", "/pages/authentif/modifier-mp.html", ["disconnected"], "/js/authentif/modifier-mp.js"),
-    new Route("/espace-user", "Espace utilisateur", "/pages/user/creat-espace-user.html", ["disconnected", "chauffeur", "passager"], "/js/user/espace-user.js"),
-    new Route("/modifier-user", "Modifier utilisateur", "/pages/user/modifier-user.html", ["disconnected", "chauffeur", "passager"], "/js/user/modifier-user.js"),
-    new Route("/creation-voyage", "Créer un voyage", "/pages/user/voyage/creation-voyage.html", ["disconnected", "chauffeur", "passager"], "/js/user/creation-voyage.js"),
-    new Route("/modifier-voyage", "Modifier un voyage", "/pages/user/voyage/modifier-voyage.html", ["disconnected", "chauffeur", "passager"]),
-    new Route("/historique-cov", "Historique des voyages", "/pages/user/voyage/historique-cov.html", ["disconnected"], "/js/user/historique-cov.js"),
-    new Route("/avis", "Avis des covoiturages", "/pages/user/voyage/avis.html", ["disconnected", "chauffeur", "passager"], "/js/user/creation-avis.js"),
-    new Route("/recap-avis", "Récapitulatif des avis", "/pages/user/voyage/recap-avis.html", ["disconnected", "chauffeur", "passager", "employe"]),
+    new Route("/modifier-mp", "Modifier mon mot de passe", "/pages/authentif/modifier-mp.html", [], "/js/authentif/modifier-mp.js"),
+    new Route("/espace-user", "Espace utilisateur", "/pages/user/creat-espace-user.html", ["user", "chauffeur", "passager"], "/js/user/espace-user.js"),
+    new Route("/modifier-user", "Modifier utilisateur", "/pages/user/modifier-user.html", ["user", "chauffeur", "passager"], "/js/user/modifier-user.js"),
+    new Route("/creation-voyage", "Créer un voyage", "/pages/user/voyage/creation-voyage.html", ["user", "chauffeur", "passager"], "/js/user/creation-voyage.js"),
+    new Route("/modifier-voyage", "Modifier un voyage", "/pages/user/voyage/modifier-voyage.html", ["user", "chauffeur", "passager"]),
+    new Route("/historique-cov", "Historique des voyages", "/pages/user/voyage/historique-cov.html", ["user", "chauffeur", "passager", "employe"], "/js/user/historique-cov.js"),
+    new Route("/avis", "Avis des covoiturages", "/pages/user/voyage/avis.html", ["user", "chauffeur", "passager"], "/js/user/creation-avis.js"),
+    new Route("/recap-avis", "Récapitulatif des avis", "/pages/user/voyage/recap-avis.html", ["user", "chauffeur", "passager", "employe"]),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename

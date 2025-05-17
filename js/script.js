@@ -102,7 +102,12 @@ function showAndHideElementsForRoles(){
                 if(!userConnected || role != "passager"){
                     element.classList.add("d-none");
                 }
-                break;    
+                break;
+            case 'user': 
+                if(!userConnected || role != "user"){
+                    element.classList.add("d-none");
+                }
+                break;   
         }
     })
 }
