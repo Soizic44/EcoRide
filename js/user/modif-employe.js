@@ -1,25 +1,32 @@
 //Implémenter le JS de ma page
-const inputMail = document.getElementById("mail");
+const inputNom = document.getElementById("name");
+const inputPrenom = document.getElementById("firstname");
+const inputMail = document.getElementById("email");
+const inputTitre = document.getElementById("role");
 const inputPassword = document.getElementById("password");
 const inputConfirmPw = document.getElementById("validation-password");
-const inputChangeMp = document.getElementById("btn-creation-user");
+const btnValidation = document.getElementById("valider");
 
+inputNom.addEventListener("keyup", validateForm); 
+inputPrenom.addEventListener("keyup", validateForm);
 inputMail.addEventListener("keyup", validateForm);
+inputTitre.addEventListener("keyup", validateForm);
 inputPassword.addEventListener("keyup", validateForm);
 inputConfirmPw.addEventListener("keyup", validateForm);
 
 
 //Function permettant de valider tout le formulaire
 function validateForm(){
+    const nomOk = validateRequired(inputNom);
+    const prenomOk = validateRequired(inputPrenom);
     const mailOk = validateMail(inputMail);
-    const passwordOk = validateMp(inputPassword);
-    const confirmPwOk = validateConfirmationMp(inputPassword, inputConfirmPw);
+    const titreOk = validateRequired(inputTitre);
 
-    if(mailOk && passwordOk && confirmPwOk){
-        inputChangeMp.disabled = false;
+    if(nomOk && prenomOk && mailOk && titreOk){
+        btnValidation.disabled = false;
     }
     else{
-        inputChangeMp.disabled = true;
+        btnValidation.disabled = true;
     }
 }
 
@@ -36,7 +43,7 @@ function validateRequired(input){
     }
 }
 
-//Définir mon regex Email et vérification de l'email
+//Définir mon regex Email
 function validateMail(input){       
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const mailContact = input.value;

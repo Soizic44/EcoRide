@@ -1,0 +1,61 @@
+<!--START : hero-->
+<section class="hero_accueil hero">
+    <h1>Création employé</h1>
+</section>
+<!--END : hero-->
+
+<!--START : Table employe-->
+<section class="recherche"> 
+    <div class="containForm padding">
+        <form id="fomulaire" method="POST">
+            <fieldset class="padding">
+                <legend class="padding">Informations utilisateur</legend>
+                <div class="titre">
+                    <label for="name">Nom :</label>
+                    <input class="form-input" id="name" type="text" name="name" placeholder="DUPONT" required>
+                </div><br/>
+                <div class="titre">
+                    <label for="firstname">Prénom :</label>
+                    <input class="form-input" id="firstname" type="text" name="firstname" placeholder="Victor" required>
+                </div><br/>
+                <div class="titre">
+                    <label for="role">Role utilisateur :</label>
+                    <div class="btn-radio">
+                        <input class="form-input" type="radio" name="role" id="employé" required checked>
+                        <label for="employé">Employé</label>
+                    </div>
+                    <div class="btn-radio">
+                        <input class="form-input" type="radio" name="role" id="admin" required>
+                        <label for="admin">Administrateur</label>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <fieldset class="padding">
+                <legend class="padding">Informations connexion</legend>
+                <div class="titre">
+                    <label for="mail">Identifiant (Email) :</label>
+                    <input class="form-input" id="mail" type="email" name="mail" placeholder="test@mail.fr" required>
+                </div><br/>
+                <div class="titre">
+                    <label for="password">Mot de passe :</label>
+                    <input class="form-input password" id="password" type="password" name="password" placeholder="Mot de passe" required>
+                    <div class="messageErreurMp">
+                        <a>Le mot de passe doit contenir 8 caractères minimum dont : 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial</a>
+                    </div>
+                </div><br/>
+                <div class="titre">
+                    <label for="validation-password">Confirmation du mot de passe :</label>
+                    <input class="form-input" type="password" id="validation-password" name="validation-password" placeholder="Mot de passe" required>
+                </div>
+            </fieldset>
+            <br/>
+
+            <button type="submit" class="lien bgColor2" id="btn-creation-user">Création</button>
+            <div>
+                <a href="/table-employe" class="lien3">Cliquer ici pour : Annuler et retourner "Détail des utilisateurs"</a>
+            </div><br/>
+        </form>
+    </div>
+</section>
+<!--END : Création de compte employe-->
