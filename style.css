@@ -312,6 +312,15 @@ textarea {
     border-radius: 5px;
     padding: 1%;
 }
+.h2Form {
+    color:#324400;
+    font-style: oblique;
+    font-size: 30px;
+}
+.interLine {
+    line-height: 1.4;
+    padding-bottom: 15px;
+}
 
 /*Connexion*/
 /*Style attention*/
@@ -335,6 +344,9 @@ textarea {
 }
 .padtop{
     padding-top: 30px;
+}
+.padbas {
+    padding: 10px;
 }
 
 /*en cas de peu de contenu (page 404): garder footer en bas de page (margin-top: auto pour footer)*/
@@ -435,6 +447,8 @@ th,td {
 /*classes d'animations pour JavaScript*/
 .feedback{
     color: #dc3545;
+    font-style: italic;
+    font-size: 15px;
 }
 
 

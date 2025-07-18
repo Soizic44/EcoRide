@@ -6,14 +6,27 @@
 
 <!--START : connexion-->
 <section class="connexion"> 
+    
     <div class="containForm padding">
+        <div class="interLine">
+            <h2 class="h2Form">Se connecter</h2>
+            <p>Pas encore de compte ?</p>
+            <a href="/creation-cpt" class="lien3" id="btn-creation-user">Créer votre compte</a>
+        </div>
         <form action="" method="post">
             <div class="titre pad">
                 <label for="mail">Identifiant/mail :</label>
                 <input class="form-input" id="mail" type="email" name="mail" placeholder="test@mail.fr" required>
+                <div class="feedback" id="feedMail">
+                    <p>! Le mail est incorrect !</p>
+                </div>
             </div>
             <div class="titre padbas">
-                <input class="form-input" type="password" class="form-control" id="password" name="password" placeholder="Mot de passe"> 
+                <label for="password">Mot de passe :</label>
+                <input class="form-input" type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
+                <div class="feedback" id="feedPw">
+                    <p>! Le mot de passe doit contenir 8 caractères minimum dont : 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial !</p>
+                </div>
             </div>
             <input class="lien" type="button" value="Connexion" id="btnConnexion"> 
         </form>
@@ -24,7 +37,6 @@
             <p>Cette espace est reservé aux utilisateurs et au personnel d'ECORIDE.</p>
         </div>
     </div>
-    <a href="/creation-cpt" class="lien bgcolor2" id="btn-creation-user">Création compte</a>
     <div class="pad">
         <a href="/" class="lien3">Annuler et retourner à "Accueil"</a>
     </div></br>

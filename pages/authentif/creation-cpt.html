@@ -7,6 +7,11 @@
 <!--START : Création de compte utilisateur-->
 <section class="recherche"> 
     <div class="containForm padding">
+        <div class="interLine">
+            <h2 class="h2Form">Créer son compte</h2>
+            <p>Vous avez déjà un  compte ?</p>
+            <a href="/connexion" class="lien3">Connectez-vous ici !</a>
+        </div>
         <form action="" method="post">
             <fieldset class="padding">
                 <legend class="padding">Informations utilisateur</legend>
@@ -25,27 +30,27 @@
                 <div class="titre">
                     <label for="mail">Identifiant (Email) :</label>
                     <input class="form-input" id="mail" type="email" name="mail" placeholder="test@mail.fr" required>
+                    <div class="feedback" id="feedMail">
+                        <p>! Le mail est incorrect !</p>
+                    </div>
                 </div><br/>
                 <div class="titre">
                     <label for="password">Mot de passe :</label>
                     <input class="form-input" id="password" type="password" name="password" placeholder="Mot de passe" required>
-                    <div class="feedback">
-                        <a>! Le mot de passe doit contenir 8 caractères minimum dont : 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial !</a>
+                    <div class="feedback" id="feedPw">
+                        <p>! Le mot de passe doit contenir 8 caractères minimum dont : 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial !</p>
                     </div>
                 </div><br/>
                 <div class="titre">
                     <label for="confirmPw">Confirmation du mot de passe :</label>
                     <input class="form-input" type="password" id="confirmPw" name="confirmPw" placeholder="Confirmer Mot de passe" required>
-                    <div class="feedback">
-                        <a>! La confirmation doit être identique au mot de passe !</a>
+                    <div class="feedback" id="feedConfPw">
+                        <p>! La confirmation doit être identique au mot de passe !</p>
                     </div>
                 </div>
             </fieldset>
             <br/>
             <button type="submit" class="lien bgColor2" id="btn-creation-user">Création</button>
-            <div>
-                <a href="/tableau-covoit" class="lien3">Vous avez déjà un  compte ? Connectez-vous ici !</a>
-            </div><br/>
         </form>
     </div>
 </section>

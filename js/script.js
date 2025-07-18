@@ -5,10 +5,11 @@ const signoutBtn = document.getElementById("deconnexion");
 
 signoutBtn.addEventListener("click", signout);
 
+//Gestion du rôle
 function getRole(){
     return getCookie(RoleCookieName);
 }
-
+//Gestion de la déconnexion
 function signout(){
     eraseCookie(tokenCookieName);
     eraseCookie(RoleCookieName);

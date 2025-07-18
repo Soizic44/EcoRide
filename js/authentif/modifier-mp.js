@@ -1,8 +1,12 @@
 //Implémenter le JS de ma page
-const inputMail = document.getElementById("mail");
-const inputPassword = document.getElementById("password");
-const inputConfirmPw = document.getElementById("validation-password");
-const inputChangeMp = document.getElementById("btn-creation-user");
+const inputMail      = document.getElementById("mail");
+const inputPassword  = document.getElementById("password");
+const inputConfirmPw = document.getElementById("confirmPw");
+const inputChangeMp  = document.getElementById("btn-changeMp");
+const feedMail       = document.getElementById("feedMail");
+const feedPw         = document.getElementById("feedPw");
+const feedConfPw     = document.getElementById("feedConfPw");
+
 
 inputMail.addEventListener("keyup", validateForm);
 inputPassword.addEventListener("keyup", validateForm);
@@ -11,9 +15,9 @@ inputConfirmPw.addEventListener("keyup", validateForm);
 
 //Function permettant de valider tout le formulaire
 function validateForm(){
-    const mailOk = validateMail(inputMail);
-    const passwordOk = validateMp(inputPassword);
-    const confirmPwOk = validateConfirmationMp(inputPassword, inputConfirmPw);
+    const mailOk      = validateMail(inputMail);
+    const passwordOk  = validateMp(inputPassword);
+    const confirmPwOk = validateConfirmMp(inputPassword, inputConfirmPw);
 
     if(mailOk && passwordOk && confirmPwOk){
         inputChangeMp.disabled = false;
@@ -41,14 +45,17 @@ function validateMail(input){
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const mailContact = input.value;
 
+
     if(mailContact.match(emailRegex)){
         input.classList.add("valid");
-        input.classList.remove("invalid"); 
+        input.classList.remove("invalid");
+        feedMail.style.display = "none";
         return true;
     }
     else{
         input.classList.remove("valid");
         input.classList.add("invalid");
+        feedMail.style.display = "";
         return false;
     }
 }
@@ -57,27 +64,34 @@ function validateMail(input){
 function validateMp(input){
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
     const passwordUser = input.value;
+
     if(passwordUser.match(passwordRegex)){
         input.classList.add("valid");
-        input.classList.remove("invalid"); 
+        input.classList.remove("invalid");
+        feedPw.style.display = "none";
         return true;
     }
     else{
         input.classList.remove("valid");
         input.classList.add("invalid");
+        feedPw.style.display = "";
         return false;
     }
 }
 
-function validateConfirmationMp(inputPassword, inputConfirmPw){
+function validateConfirmMp(inputPassword, inputConfirmPw){
     if(inputPassword.value == inputConfirmPw.value){
         inputConfirmPw.classList.add("valid");
         inputConfirmPw.classList.remove("invalid");
+        feedConfPw.style.display = "none";
         return true;
     }
     else{
         inputConfirmPw.classList.add("invalid");
         inputConfirmPw.classList.remove("valid");
+        feedConfPw.style.display = "";
         return false;
     }
 }
+
+

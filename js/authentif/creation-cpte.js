@@ -4,6 +4,9 @@ const inputMail = document.getElementById("mail");
 const inputPassword = document.getElementById("password");
 const inputConfirmPw = document.getElementById("confirmPw");
 const btnValidation = document.getElementById("btn-creation-user");
+const feedMail       = document.getElementById("feedMail");
+const feedPw         = document.getElementById("feedPw");
+const feedConfPw     = document.getElementById("feedConfPw");
 
 inputPseudo.addEventListener("keyup", validateForm); 
 inputMail.addEventListener("keyup", validateForm);
@@ -46,12 +49,14 @@ function validateMail(input){
 
     if(mailContact.match(emailRegex)){
         input.classList.add("valid");
-        input.classList.remove("invalid"); 
+        input.classList.remove("invalid");
+        feedMail.style.display = "none"; 
         return true;
     }
     else{
         input.classList.remove("valid");
         input.classList.add("invalid");
+        feedMail.style.display = "block";
         return false;
     }
 }
@@ -62,12 +67,14 @@ function validateMp(input){
     const passwordUser = input.value;
     if(passwordUser.match(passwordRegex)){
         input.classList.add("valid");
-        input.classList.remove("invalid"); 
+        input.classList.remove("invalid");
+        feedPw.style.display = "none"; 
         return true;
     }
     else{
         input.classList.remove("valid");
         input.classList.add("invalid");
+        feedPw.style.display = "block";
         return false;
     }
 }
@@ -76,11 +83,13 @@ function validateConfirmationMp(inputPassword, inputConfirmPw){
     if(inputPassword.value == inputConfirmPw.value){
         inputConfirmPw.classList.add("valid");
         inputConfirmPw.classList.remove("invalid");
+        feedConfPw.style.display = "none";
         return true;
     }
     else{
         inputConfirmPw.classList.add("invalid");
         inputConfirmPw.classList.remove("valid");
+        feedConfPw.style.display = "block";
         return false;
     }
 }

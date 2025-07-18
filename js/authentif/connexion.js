@@ -1,7 +1,9 @@
 //Implémenter le JS de ma page
-const mailInput = document.getElementById("mail");
-const passwordInput = document.getElementById("password");
-const btnSingin = document.getElementById("btnConnexion");
+const mailInput      = document.getElementById("mail");
+const passwordInput  = document.getElementById("password");
+const btnSingin      = document.getElementById("btnConnexion");
+const feedMail       = document.getElementById("feedMail");
+const feedPw         = document.getElementById("feedPw");
 
 mailInput.addEventListener("keyup", validateForm);
 passwordInput.addEventListener("keyup", validateForm);
@@ -47,12 +49,14 @@ function validateMail(input){
 
     if(mailContact.match(emailRegex)){
         input.classList.add("valid");
-        input.classList.remove("invalid"); 
+        input.classList.remove("invalid");
+        feedMail.style.display = "none";
         return true;
     }
     else{
         input.classList.remove("valid");
         input.classList.add("invalid");
+        feedMail.style.display = "";
         return false;
     }
 }
@@ -63,12 +67,14 @@ function validateMp(input){
     const passwordUser = input.value;
     if(passwordUser.match(passwordRegex)){
         input.classList.add("valid");
-        input.classList.remove("invalid"); 
+        input.classList.remove("invalid");
+        feedPw.style.display = "none"; 
         return true;
     }
     else{
         input.classList.remove("valid");
         input.classList.add("invalid");
+        feedPw.style.display = "";
         return false;
     }
 }
