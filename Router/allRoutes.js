@@ -7,7 +7,8 @@ export const allRoutes = [
     new Route("/formulaire-covoit", "Formulaire de covoiturage", "/pages/visiteur/formulaire-covoit.html", [], "/js/visiteur/formulaire-covoit.js"),
     new Route("/tableau-covoit", "Covoiturage disponibles", "/pages/visiteur/covoiturage/tableau-covoit.html", []),
     new Route("/detail-covoit", "Détail du covoiturage", "/pages/visiteur/covoiturage/detail-covoit.html", []),
-    new Route("/contact", "contact", "/pages/visiteur/contact.html", [], "/js/visiteur/contact.js"),
+    new Route("/contact", "contact", "/pages/visiteur/contact.html", [], "/js/visiteur/contact.js", "/pages/visiteur/mail.php"),
+    new Route("/mail", "reponse mail", "/pages/visiteur/mail.php", []),
     new Route("/connexion", "connexion", "/pages/authentif/connexion.html", ["disconnected"], "/js/authentif/connexion.js"),
     new Route("/creation-cpt", "Création de compte", "/pages/authentif/creation-cpt.html", ["disconnected"], "/js/authentif/creation-cpte.js"),
     new Route("/modifier-mp", "Modifier mon mot de passe", "/pages/authentif/modifier-mp.html", [], "/js/authentif/modifier-mp.js"),
@@ -21,7 +22,7 @@ export const allRoutes = [
     new Route("/historique-cov", "Historique des voyages", "/pages/user/voyage/historique-cov.html", ["user", "chauffeur", "passager", "employe"], "/js/user/historique-cov.js"),
     new Route("/avis", "Avis des covoiturages", "/pages/user/voyage/avis.html", ["user", "chauffeur", "passager"], "/js/user/creation-avis.js"),
     new Route("/recap-avis", "Récapitulatif des avis", "/pages/user/voyage/recap-avis.html", ["user", "chauffeur", "passager", "employe"]),
-    new Route("/credit", "Récapitulatif des crédits", "/pages/user/voyage/credit.html", ["connected"]),
+    new Route("/credit", "Récapitulatif des crédits", "/pages/user/voyage/credit.html", ["user", "chauffeur", "passager", "employe", "admin"]),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename

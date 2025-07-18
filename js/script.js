@@ -65,7 +65,9 @@ disconnected (visiteur)
 connected (admin, employé ou utilisateur)
     - admin
     - employé
-    - utilisateur/user : chauffeur et/ou passager
+    - chauffeur
+    - passager
+    - utilisateur/user : chauffeur et passager
 */
 function showAndHideElementsForRoles(){
     const userConnected = isConnected();
@@ -108,7 +110,7 @@ function showAndHideElementsForRoles(){
                 if(!userConnected || role != "user"){
                     element.classList.add("d-none");
                 }
-                break;   
+                break; 
         }
     })
 }

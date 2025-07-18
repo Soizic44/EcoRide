@@ -1,28 +1,43 @@
 //Implémenter le JS de ma page
-const inputNom = document.getElementById("name");
-const inputPrenom = document.getElementById("firstname");
-const inputMail = document.getElementById("email");
-const inputTitre = document.getElementById("titre");
-const inputMessage = document.getElementById("message");
+const inputNom      = document.getElementById("nom");
+const inputPrenom   = document.getElementById("prenom");
+const inputMail     = document.getElementById("email");
+const inputObjet    = document.getElementById("objet");
+const inputMessage  = document.getElementById("message");
 const btnValidation = document.getElementById("envoiContact");
+const msg           = document.getElementById("formOutput");
+const loader        = document.getElementById("loaderContent");
 
 inputNom.addEventListener("keyup", validateForm); 
 inputPrenom.addEventListener("keyup", validateForm);
 inputMail.addEventListener("keyup", validateForm);
-inputTitre.addEventListener("keyup", validateForm);
+inputObjet.addEventListener("keyup", validateForm);
 inputMessage.addEventListener("keyup", validateForm);
 
+//fonction permettant de mettre en place le loader de gestion d'attente
+document.getElementById("envoiContact").onclick = function(){
+    afficheLoader("envoiContact", this.click);
+}
+function afficheLoader(){
+    if(formulaire.envoiContact.click){
+        loader.classList.add("active");
+    }
+    else{
+        loader.classList.remove("active");
+    } 
+}
 
 //Function permettant de valider tout le formulaire
 function validateForm(){
     const nomOk = validateRequired(inputNom);
     const prenomOk = validateRequired(inputPrenom);
     const mailOk = validateMail(inputMail);
-    const titreOk = validateRequired(inputTitre);
+    const objetOk = validateRequired(inputObjet);
     const messageOk = validateMessage(inputMessage);
 
-    if(nomOk && prenomOk && mailOk && titreOk && messageOk){
+    if(nomOk && prenomOk && mailOk && objetOk && messageOk){
         btnValidation.disabled = false;
+        msg.textContent = "";
     }
     else{
         btnValidation.disabled = true;
@@ -38,6 +53,8 @@ function validateRequired(input){
     else{
         input.classList.remove("valid");
         input.classList.add("invalid");
+        msg.textContent = "Merci de remplir les champs manquants";
+        msg.classList.add("invalid");
         return false;
     }
 }
@@ -55,6 +72,8 @@ function validateMail(input){
     else{
         input.classList.remove("valid");
         input.classList.add("invalid");
+        msg.textContent = "Votre adresse email est incorrecte";
+        msg.classList.add("invalid");
         return false;
     }
 }
@@ -72,6 +91,8 @@ function validateMessage(input){
     else{
         input.classList.remove("valid");
         input.classList.add("invalid");
+        msg.textContent = "Votre message doit avoir au moins 10 caractères.";
+        msg.classList.add("invalid");
         return false;
     }
 }

@@ -5,15 +5,45 @@
 <!--END : hero-->
 
 <!--START : Table crédit-->
-<section class="recherche"> 
+<section class="recherche" data-show="admin">
     <div class="containForm padding">
-        <a href="/creation-user" class="lien bgColor2">Ajouter</a>
+        <h2>Récapitulatif des opérations</h2>
 
-        <table>
+        <table class="recapCredit">
             <tr>
                 <th>Identifiant utilisateur</th>
                 <th>Pseudo</th>
-                <th>Date</th>
+                <th>Date</th> 
+                <th>crédit initial</th>
+                <th>Crédit ajouté/entrant</th>
+                <th>Crédit sortant/débité</th>
+                <th>Solde plateforme</th>
+                <th>Solde crédit</th>
+            </tr>
+
+            <tr>
+                <td>125</td>
+                <td>Jojo</td>
+                <td>25/05/25</td>
+                <td>20</td>
+                <td>30</td>
+                <td>35</td>
+                <td>10</td>
+                <td>5</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section class="recherche" data-show="admin">
+    <div class="containForm padding">
+        <h2>Récapitulatif des crédit</h2>
+
+        <table class="recapCredit">
+            <tr>
+                <th>Identifiant utilisateur</th>
+                <th>Pseudo</th>
+                <th>Date</th> 
                 <th>crédit initial</th>
                 <th>Crédit ajouté/entrant</th>
                 <th>Crédit sortant/débité</th>
@@ -31,7 +61,7 @@
                 <td>35</td>
                 <td>10</td>
                 <td>5</td>
-                <td><a href="/ajouter-credit"><img class="image-crud1" src="assets/icones/modifier.jpg"></a></td>
+                <td><a href="/ajouter-credit"><img class="image-crud1" src="assets/icones/modifier.jpg" alt="ajouter crédit"></a></td>
             </tr>
         </table>
     </div>

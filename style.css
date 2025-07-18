@@ -321,6 +321,13 @@ textarea {
     line-height: 1.4;
     padding-bottom: 15px;
 }
+.titre_h2 {
+    align-content: center;
+}
+.h1Mail{
+    color: black;
+    font-style: oblique;
+}
 
 /*Connexion*/
 /*Style attention*/
@@ -345,8 +352,11 @@ textarea {
 .padtop{
     padding-top: 30px;
 }
-.padbas {
-    padding: 10px;
+.padBas{
+    padding-bottom: 2%;
+}
+.margTop{
+    margin-top: 15px;
 }
 
 /*en cas de peu de contenu (page 404): garder footer en bas de page (margin-top: auto pour footer)*/
@@ -444,6 +454,25 @@ th,td {
     padding-top: 15px;
 }
 
+/*Style de la gestion des erreurs, lorsque la div n'est pas vide => s'il y a des erreurs sur les inputs*/
+#formOutput {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.error {
+    color: red;
+}
+.success {
+    color: green;
+}
+.msgMail {
+    margin: 15px;
+    font-size: larger;
+    text-align: center;
+    padding-top: 20px;
+    font-weight: bolder;
+}
+
 /*classes d'animations pour JavaScript*/
 .feedback{
     color: #dc3545;
@@ -451,6 +480,52 @@ th,td {
     font-size: 15px;
 }
 
+/*Loader : animation d'attente chargement page back*/
+#loaderContent{
+    display: none;
+}
+#loaderContent.active{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader{
+    display: flex;
+    justify-content: space-between;
+}
+.loader div{
+    width: 50px;
+    height: 50px;
+    background-color: goldenrod;
+    border-radius: 50%;
+    margin: 15px;
+    animation: grow-shrink 1.5s infinite;
+}
+.loader div:nth-child(1) {
+  animation-delay: 0s;
+}
+.loader div:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.loader div:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/*Règle d'animation*/
+@keyframes grow-shrink {
+    0%, 100% { 
+        transform: scale(0.2); 
+    }
+    50% { 
+        transform: scale(1.5); 
+    }
+}
 
 /*MEDIA QUERIES*/
 
