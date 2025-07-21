@@ -1,5 +1,5 @@
 //Implémenter le JS de ma page
-const mailInput      = document.getElementById("mail");
+const mailInput      = document.getElementById("email");
 const passwordInput  = document.getElementById("password");
 const btnSingin      = document.getElementById("btnConnexion");
 const feedMail       = document.getElementById("feedMail");

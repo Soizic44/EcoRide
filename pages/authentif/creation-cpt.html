@@ -12,7 +12,7 @@
             <p>Vous avez déjà un  compte ?</p>
             <a href="/connexion" class="lien3">Connectez-vous ici !</a>
         </div>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <fieldset class="padding">
                 <legend class="padding">Informations utilisateur</legend>
                 <div class="titre">
@@ -20,16 +20,27 @@
                     <input class="form-input" id="pseudo" type="text" name="pseudo" placeholder="Christophe" required>
                 </div><br/>
                 <div class="titre">
-                    <label for="file">Insérer votre photo d'identité :</label>
-                    <input type="file" id="file" accept="image/*,.pdf" required>
+                    <label for="nom">Pseudo :</label>
+                    <input class="form-input" id="nom" type="text" name="nom" placeholder="OLIVER" required>
+                </div><br/>
+                <div class="titre">
+                    <label for="prenom">Pseudo :</label>
+                    <input class="form-input" id="prenom" type="text" name="prenom" placeholder="Christophe" required>
+                </div><br/>
+                <div class="titre">
+                    <label for="photo" class="imageContainer">
+                        <span >Déposer votre photo d'identité ici :</span>
+                        <p>ou</p>
+                        <input type="file" class="imageTitre" id="photo" name="photo" accept="image/*" required>
+                    </label>
                 </div><br/>
             </fieldset>
             
             <fieldset class="padding">
                 <legend class="padding">Informations connexion</legend>
                 <div class="titre">
-                    <label for="mail">Identifiant (Email) :</label>
-                    <input class="form-input" id="mail" type="email" name="mail" placeholder="test@mail.fr" required>
+                    <label for="email">Identifiant (Email) :</label>
+                    <input class="form-input" id="email" type="email" name="email" placeholder="test@mail.fr" required>
                     <div class="feedback" id="feedMail">
                         <p>! Le mail est incorrect !</p>
                     </div>
@@ -50,7 +61,7 @@
                 </div>
             </fieldset>
             <br/>
-            <button type="submit" class="lien bgColor2" id="btn-creation-user">Création</button>
+            <button name="submit" type="submit" class="lien bgColor2" id="btn-creation-user">Création</button>
         </form>
     </div>
 </section>

@@ -16,12 +16,13 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //Déclaration des variables
-    $nom = htmlspecialchars($_POST['nom']);
-    $prenom = htmlspecialchars($_POST['prenom']);
-    $email = htmlspecialchars($_POST['email']);
-    $objet = htmlspecialchars($_POST['objet']);
-    $message = htmlspecialchars($_POST['message']);
-    $msg = ['msg'];
+    $nom = htmlspecialchars($_POST["nom"]);
+    $prenom = htmlspecialchars($_POST["prenom"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $objet = htmlspecialchars($_POST["objet"]);
+    $message = htmlspecialchars($_POST["message"]);
+    $msg = ["msg"];
+    $_POST["envoyer"];
 
     //Vérification des entrés issues du formulaire
     //Vérification que les différents champs sont correctement rempli 
@@ -45,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $from = $email . "\r\n" . "Reply-to:" . $email;
         $sujet = 'Nouveau message';
 
-        $headers = "Content-type: text/html; charset=UTF-8\n";
+        $headers = "Content-type: text/html; charset=UTF-8\r\n";
         $headers = "Reply-to: . $email";
 
         $message = "

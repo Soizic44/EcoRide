@@ -1,5 +1,5 @@
 //Implémenter le JS de ma page
-const inputMail      = document.getElementById("mail");
+const inputMail      = document.getElementById("email");
 const inputPassword  = document.getElementById("password");
 const inputConfirmPw = document.getElementById("confirmPw");
 const inputChangeMp  = document.getElementById("btn-changeMp");

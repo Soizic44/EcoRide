@@ -1,6 +1,6 @@
 //Implémenter le JS de ma page
 const inputPseudo = document.getElementById("pseudo");
-const inputMail = document.getElementById("mail");
+const inputMail = document.getElementById("email");
 const inputPassword = document.getElementById("password");
 const inputConfirmPw = document.getElementById("confirmPw");
 const btnValidation = document.getElementById("btn-creation-user");
