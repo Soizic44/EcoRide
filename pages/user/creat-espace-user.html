@@ -29,6 +29,17 @@
 <!--START : Espace utilisateur--> 
 <section class="connexion">
     <form action="" method="post" class="containForm padding" id="formUser">
+        <fieldset id="ident" class="titre padding">
+            <legend>Identité</legend>
+            <div class="titre">
+                <label for="photo" class="imageContainer">
+                    <span >Déposer votre photo d'identité ici :</span>
+                    <p>ou</p>
+                    <input type="file" class="imageTitre" id="photo" name="photo" accept="image/*" required>
+                </label>
+            </div><br/>
+        </fieldset>
+        
         <fieldset id="immat" class="titre padding">
             <legend>Immatriculation</legend>
             <div class="padLeft">
@@ -40,6 +51,7 @@
                 <input class="form-input" id="FirstImmat" type="date" name="FirstImmat" placeholder="01/11/2020" required>
             </div><br/>
         </fieldset>
+
         <fieldset id="Véhicule" class="titre padding">
             <legend>Véhicule</legend>
             <div class="padLeft">

@@ -331,7 +331,6 @@ textarea {
 display: flex;
 gap: 10px;
 flex-direction: column;
-justify-content: center;
 align-items: center;
 padding: 20px;
 border-radius: 10px;
@@ -344,10 +343,6 @@ transition: background .2s ease-in-out, border .2s ease-in-out;
 .drop-container.drag-active {
 background: #eee;
 border-color: #111;
-}
-.imageContainer:hover .imageTitre,
-.imageContainer.drag-active .imageTitre {
-color: #222;
 }
 .imageTitre {
 font-size: 15px;

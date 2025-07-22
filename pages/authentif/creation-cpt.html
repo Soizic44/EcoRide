@@ -12,7 +12,7 @@
             <p>Vous avez déjà un  compte ?</p>
             <a href="/connexion" class="lien3">Connectez-vous ici !</a>
         </div>
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="/php/inscription.php" method="POST" enctype="multipart/form-data">
             <fieldset class="padding">
                 <legend class="padding">Informations utilisateur</legend>
                 <div class="titre">
@@ -20,19 +20,12 @@
                     <input class="form-input" id="pseudo" type="text" name="pseudo" placeholder="Christophe" required>
                 </div><br/>
                 <div class="titre">
-                    <label for="nom">Pseudo :</label>
+                    <label for="nom">Nom :</label>
                     <input class="form-input" id="nom" type="text" name="nom" placeholder="OLIVER" required>
                 </div><br/>
                 <div class="titre">
-                    <label for="prenom">Pseudo :</label>
+                    <label for="prenom">Prénom :</label>
                     <input class="form-input" id="prenom" type="text" name="prenom" placeholder="Christophe" required>
-                </div><br/>
-                <div class="titre">
-                    <label for="photo" class="imageContainer">
-                        <span >Déposer votre photo d'identité ici :</span>
-                        <p>ou</p>
-                        <input type="file" class="imageTitre" id="photo" name="photo" accept="image/*" required>
-                    </label>
                 </div><br/>
             </fieldset>
             
@@ -47,7 +40,7 @@
                 </div><br/>
                 <div class="titre">
                     <label for="password">Mot de passe :</label>
-                    <input class="form-input" id="password" type="password" name="password" placeholder="Mot de passe" required>
+                    <input class="form-input" id="password" type="password" name="mdp" placeholder="Mot de passe" required>
                     <div class="feedback" id="feedPw">
                         <p>! Le mot de passe doit contenir 8 caractères minimum dont : 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial !</p>
                     </div>

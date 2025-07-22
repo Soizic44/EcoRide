@@ -24,15 +24,10 @@ try{
         echo "Nom : " . $user['nom'] . "<br>";
         echo "Prenom : " . $user['prenom'] . "<br>";
         echo "email : " . $user['email'] . "<br>";
-        echo "Photo: " . $user['photo'] . "<br>";
         echo "<br>";
     }
 }
 catch (PDOException $e){
     echo "Erreur de connexion à la base de données : ". $e->getMessage();
-}
-
-if(isset($_POST['submit'])){
-    var_dump($_FILES);
 }
 ?>
