@@ -11,9 +11,17 @@ btnSingin.addEventListener("click", checkCredentials);
 
 
 //Function permettant de valider les input
+//Function permettant de valider tout le formulaire
 function validateForm(){
-    validateMail(mailInput);
-    validateMp(passwordInput);
+    const mailOk = validateMail(mailInput);
+    const passwordOk = validateMp(passwordInput);
+
+    if(mailOk && passwordOk){
+        btnSingin.disabled = false;
+    }
+    else{
+        btnSingin.disabled = true;
+    }
 }
 
 function validateRequired(input){
@@ -26,19 +34,6 @@ function validateRequired(input){
         input.classList.remove("valid");
         input.classList.add("invalid");
         return false;
-    }
-}
-
-//Function permettant de valider tout le formulaire
-function validateForm(){
-    const mailOk = validateMail(mailInput);
-    const passwordOk = validateMp(passwordInput);
-
-    if(mailOk && passwordOk){
-        btnSingin.disabled = false;
-    }
-    else{
-        btnSingin.disabled = true;
     }
 }
 
@@ -83,7 +78,7 @@ function validateMp(input){
 function checkCredentials(){
     //Ici, il faudra appeler l'API pour vérifier les credentials en BDD
 
-    if(mailInput.value == "test@mail.com" && passwordInput.value == "12Abc?/ab"){
+    if(mailInput.value == "test@gmail.com" && passwordInput.value == "Password123."){
         //Il faudra récupérer le vrai token
         const token = "lkjsdngfljsqdnglkjsdbglkjqskjgkfjgbqslkfdgbskldfgdfgsdgf";
         setToken(token);

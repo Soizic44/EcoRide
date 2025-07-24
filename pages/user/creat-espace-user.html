@@ -6,7 +6,7 @@
 
 <!--START : Choix utilisateur-->
 <section class="recherche"> 
-    <form action="" method="post" class="containForm padding" id="formChoice">
+    <form action="/php/users/creat-user.php" method="post" class="containForm padding" id="formChoice">
         <fieldset id="utilisateur" class="titre padding">
             <legend>Choix utilisateur</legend>
             <div class="block">  
@@ -28,7 +28,7 @@
 
 <!--START : Espace utilisateur--> 
 <section class="connexion">
-    <form action="" method="post" class="containForm padding" id="formUser">
+    <form action="" method="post" class="containForm padding" id="formUser"  enctype="multipart/form-data">
         <fieldset id="ident" class="titre padding">
             <legend>Identité</legend>
             <div class="titre">
@@ -48,7 +48,7 @@
             </div><br>
             <div class="padLeft">
                 <label for="FirstImmat">Date 1ère immatriculation :</label>
-                <input class="form-input" id="FirstImmat" type="date" name="FirstImmat" placeholder="01/11/2020" required>
+                <input class="form-input" id="FirstImmat" type="date" name="dateImmat" placeholder="01/11/2020" required>
             </div><br/>
         </fieldset>
 
@@ -59,17 +59,20 @@
                 <input class="form-input" id="marque" type="text" name="marque" placeholder="citroën" required>
             </div><br>
             <div class="padLeft">
-                <label for="modèle">Modèle :</label>
-                <input class="form-input" id="modèle" type="text" name="modèle" placeholder="C5" required>
+                <label for="modele">Modèle :</label>
+                <input class="form-input" id="modele" type="text" name="modele" placeholder="C5" required>
             </div><br/>
             <div class="padLeft">
                 <label for="couleur">Couleur :</label>
                 <input class="form-input" id="couleur" type="text" name="couleur" placeholder="noir" required>
             </div><br/>
             <div class="padLeft">
-                <label for="places">Nombre de place disponible :</label>
-                <input class="form-input" id="places" type="number" name="places" placeholder="4" required>
-            </div><br/>
+                <label for="electrique">Electrique :</label>
+                <select class="form-input" id="electrique" name="elect" required>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+            </div><br> 
         </fieldset>
         <fieldset id="préférences" class="titre padding">
             <legend>Préférences</legend>
@@ -81,17 +84,17 @@
                 </select>
             </div><br> 
             <div class="padLeft">
-                <label for="animal">Animal :</label>
+                <label for="animal">Animal accepté :</label>
                 <select class="form-input" id="animal" name="animal" required>
-                    <option value="animal">Animal</option>
-                    <option value="no-animal">Pas d'animal</option>
+                    <option value="animal">Oui</option>
+                    <option value="no-animal">Non</option>
                 </select>
             </div><br> 
             <div class="flex">
                 <textarea name="ajoutPref" id="ajoutPref" cols="28" rows="15" placeholder="Autre préférences..."></textarea>
             </div>   
         </fieldset>
-        <input type="submit" value="Valider" class="lien" id="envoiCreateUser">
+        <input type="submit" value="Valider" class="lien" id="envoiCreateUser" name="submit">
     </form>
     <div class="titre">
         <a href="/modifier-user" class="bgcolor2 lien"><img class="image-crud1" src="/assets/icones/modifier.jpg" alt="modifier espace">Modifier espace</a>

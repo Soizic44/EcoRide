@@ -13,7 +13,7 @@
             <p>Pas encore de compte ?</p>
             <a href="/creation-cpt" class="lien3" id="btn-creation-user">Créer votre compte</a>
         </div>
-        <form action="../loginPost" method="POST">
+        <form action="/php/authentif/loginPost.php" method="POST">
             <div class="titre pad">
                 <label for="email">Identifiant/mail :</label>
                 <input class="form-input" id="email" type="email" name="email" placeholder="test@mail.fr" required>
@@ -23,12 +23,12 @@
             </div>
             <div class="titre padbas">
                 <label for="password">Mot de passe :</label>
-                <input class="form-input" type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
+                <input class="form-input" type="password" class="form-control" id="password" name="mdp" placeholder="Mot de passe">
                 <div class="feedback" id="feedPw">
                     <p>! Le mot de passe doit contenir 8 caractères minimum dont : 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial !</p>
                 </div>
             </div>
-            <input class="lien" type="button" value="Connexion" id="btnConnexion"> 
+            <input class="lien" type="button" value="Connexion" id="btnConnexion" name="connexion"> 
         </form>
         <a href="/modifier-mp" class="lien3">Mot de passe oublié ? Cliquez ici</a>
         <div class="info">
