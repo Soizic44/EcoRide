@@ -14,7 +14,7 @@ catch (PDOException $e){
 }
 
 //Soumission du formulaire
-if(isset($_POST['submit'])){   
+if(isset($_POST['submit'])) {   
 
     // Vérification que tous les champs requis sont remplis
     if(isset($_POST['email'], $_POST['mdp'])
@@ -44,15 +44,16 @@ if(isset($_POST['submit'])){
                 die("L'utilisateur et/ou le mot de passe est incorrect");
             }
             // Connexion réussi : on connecte l'utilisateur et on démarre la session PHP
-            session_start();
+            //--> Ici c'est Javascript qui est programmer pour le faire
+            session_start(); 
 
             //Stocker dans $_SESSION les informations de l'utilisateur
             $_SESSION["users"] = [
-                "idUser" => $users["id_user"],
-                "pseudo" => $users["pseudo"],
-                "nom" => $users["nom"],
-                "prenom" => $users["prenom"],
-                "email" => $users["email"]
+                "idUser" => $users['id_user'],
+                "pseudo" => $users['pseudo'],
+                "nom" => $users['nom'],
+                "prenom" => $users['prenom'],
+                "email" => $users['email']
             ];
             //Redirection vers la page voulue
             header("Location: /"); 

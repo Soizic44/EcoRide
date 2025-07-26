@@ -12,7 +12,7 @@
             <p>Vous avez déjà un  compte ?</p>
             <a href="/connexion" class="lien3">Connectez-vous ici !</a>
         </div>
-        <form action="/php/authentif/inscription.php" method="POST">
+        <form action="/php/authentif/inscription.php" method="POST" enctype="multipart/form-data">
             <fieldset class="padding">
                 <legend class="padding">Informations utilisateur</legend>
                 <div class="titre">
@@ -26,6 +26,13 @@
                 <div class="titre">
                     <label for="prenom">Prénom :</label>
                     <input class="form-input" id="prenom" type="text" name="prenom" placeholder="Christophe" required>
+                </div><br/>
+                <div class="titre">
+                    <label for="photo" class="imageContainer">
+                        <span >Déposer votre photo d'identité ici :</span>
+                        <p>ou</p>
+                        <input type="file" class="imageTitre" id="photo" name="image" accept="image/*" required>
+                    </label>
                 </div><br/>
             </fieldset>
             
