@@ -1,8 +1,8 @@
 <?php
 //Récuperation de mes variables de connexion
 $dsn = 'mysql:host=localhost;dbname=ecoride';
-$username = 'user_php';
-$password = '5f7zfgIo8SF25R';
+$username = 'root';
+$password = '';
 
 //Création connexion PDO
 try{
@@ -19,6 +19,8 @@ if(isset($_POST['submit'])){
     // Vérification que tous les champs requis sont remplis
     if(isset($_POST['pseudo'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp'], $_POST['confirmPw'])
         && !empty($_POST['pseudo']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['mdp']) && !empty($_POST['confirmPw'])
+        //Vérification si un fichier a été envoyé
+        && isset($_FILES['image']) && $_FILES['image']['error'] === 0
     ){
         // Le formulaire est complet
         // Assignation et récupération des données en les protégeant
@@ -82,7 +84,7 @@ if(isset($_POST['submit'])){
         // Génération d'un nom unique des images
         $newname = md5(uniqid());
         // Génération du chemin complet de l'image
-        $newfilename = __DIR__ . "/photos/$newname.$extension";
+        $newfilename = __DIR__ . "/../../photos/$newname.$extension";
 
         // Et déplacer mon image dans dossier créé
         if(!move_uploaded_file($_FILES['image']['tmp_name'], $newfilename)){
@@ -93,21 +95,20 @@ if(isset($_POST['submit'])){
         chmod($newfilename, 0644);
 
         //Insertion des données saisies en base de données
-        $requete = $pdo->prepare("INSERT INTO users VALUES (0, :pseudo, :nom, :prenom, :image, :email, :mdp, :confirmPw)");
+        $requete = $pdo->prepare("INSERT INTO users VALUES (0, :pseudo, :nom, :prenom, :photo, :email, :password)");
         $requete->execute(
             array(
                 "pseudo" => $pseudoForm,
                 "nom" => $nomForm,
                 "prenom" => $prenomForm,
-                "image" => $newname.$extension,
+                "photo" => $newname.$extension,
                 "email" => $emailForm,
-                "mdp" => $mdpForm,
-                "confirmPw" => $confirmPwForm
+                "password" => $mdpForm,
             )   
         );
 
         // Récupération de l'id de nouvel utilisateur
-        $id_user = $pdo->lastIsertId();
+        $id_user = $pdo->lastInsertId();
 
         //Redirection vers page 
         header("Location: /espace-user");
@@ -116,4 +117,4 @@ if(isset($_POST['submit'])){
         die("Le formulaire est imcomplet");
     }
 }
-?>
+?>          

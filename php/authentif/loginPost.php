@@ -1,8 +1,8 @@
 <?php
 //Récuperation de mes variables de connexion
 $dsn = 'mysql:host=localhost;dbname=ecoride';
-$username = 'user_php';
-$password = '5f7zfgIo8SF25R';
+$username = 'root';
+$password = '';
 
 //Création connexion PDO
 try{

@@ -5,100 +5,103 @@
 <!--END : hero-->
 
 <!--START : Choix utilisateur-->
-<section class="recherche"> 
-    <form action="/php/users/creat-user.php" method="post" class="containForm padding" id="formChoice">
-        <fieldset id="utilisateur" class="titre padding">
-            <legend>Choix utilisateur</legend>
-            <div class="block">  
-              <input class="form-input checkbox" type="radio" id="chauffeur" name="choix" value="chauffeur" onclick="afficheForm()" checked>
-              <label for="chauffeur" class="padLeft">Chauffeur</label>
-            </div>
-            <div class="block">
-                <input class="form-input checkbox" type="radio" id="passager" name="choix" value="passager" onclick="maskForm()">
-                <label for="passager" class="padLeft">Passager</label>
-              </div>
-            <div class="block">  
-                <input class="form-input checkbox" type="radio" id="les2" name="choix" value="les2" onclick="afficheForm1()">
-                <label for="les2" class="padLeft">Les Deux</label>
-            </div>
-          </fieldset>
-    </form>
-</section>
-<!--END : Choix utilisateur--> 
-
-<!--START : Espace utilisateur--> 
-<section class="connexion">
-    <form action="" method="post" class="containForm padding" id="formUser">
-        <fieldset id="ident" class="titre padding">
-            <legend>Identité</legend>
-            <div class="titre">
-                <label for="email">Identifiant (Email) :</label>
-                <input class="form-input" id="email" type="email" name="email" placeholder="test@mail.fr" required>
-                <div class="feedback" id="feedMail">
-                    <p>! Le mail est incorrect !</p>
+<form action="/php/users/creat-user.php" method="POST" id="formChoice">
+    <section class="recherche" >
+        <div class="containForm padding">
+            <fieldset id="utilisateur" class="titre padding">
+                <legend>Choix utilisateur</legend>
+                <div class="block">  
+                    <input class="form-input checkbox" type="radio" id="chauffeur" name="choix" value="chauffeur" onclick="afficheForm()" checked>
+                    <label for="chauffeur" class="padLeft">Chauffeur</label>
                 </div>
-            </div><br/>
-        </fieldset>
-        
-        <fieldset id="immat" class="titre padding">
-            <legend>Immatriculation</legend>
-            <div class="padLeft">
-                <label for="immatriculation">Plaque Immatriculation :</label>
-                <input class="form-input" id="immatriculation" type="text" name="immatriculation" placeholder="BZ-845-YY" required>
-            </div><br>
-            <div class="padLeft">
-                <label for="FirstImmat">Date 1ère immatriculation :</label>
-                <input class="form-input" id="FirstImmat" type="date" name="dateImmat" placeholder="01/11/2020" required>
-            </div><br/>
-        </fieldset>
+                <div class="block">
+                    <input class="form-input checkbox" type="radio" id="passager" name="choix" value="passager" onclick="maskForm()">
+                    <label for="passager" class="padLeft">Passager</label>
+                </div>
+                <div class="block">  
+                    <input class="form-input checkbox" type="radio" id="les2" name="choix" value="les2" onclick="afficheForm1()">
+                    <label for="les2" class="padLeft">Les Deux</label>
+                </div>
+            </fieldset>
+        </div> 
+    </section>
+    <!--END : Choix utilisateur--> 
 
-        <fieldset id="Véhicule" class="titre padding">
-            <legend>Véhicule</legend>
-            <div class="padLeft">
-                <label for="marque">Marque :</label>
-                <input class="form-input" id="marque" type="text" name="marque" placeholder="citroën" required>
-            </div><br>
-            <div class="padLeft">
-                <label for="modele">Modèle :</label>
-                <input class="form-input" id="modele" type="text" name="modele" placeholder="C5" required>
-            </div><br/>
-            <div class="padLeft">
-                <label for="couleur">Couleur :</label>
-                <input class="form-input" id="couleur" type="text" name="couleur" placeholder="noir" required>
-            </div><br/>
-            <div class="padLeft">
-                <label for="electrique">Electrique :</label>
-                <select class="form-input" id="electrique" name="elect" required>
-                    <option value="oui">Oui</option>
-                    <option value="non">Non</option>
-                </select>
-            </div><br> 
-        </fieldset>
-        <fieldset id="préférences" class="titre padding">
-            <legend>Préférences</legend>
-            <div class="padLeft">
-                <label for="fumeur">Tabac :</label>
-                <select class="form-input" id="fumeur" name="fumeur" required>
-                    <option value="fumeur">Fumeur</option>
-                    <option value="non-fumeur">Non-fumeur</option>
-                </select>
-            </div><br> 
-            <div class="padLeft">
-                <label for="animal">Animal accepté :</label>
-                <select class="form-input" id="animal" name="animal" required>
-                    <option value="animal">Oui</option>
-                    <option value="no-animal">Non</option>
-                </select>
-            </div><br> 
-            <div class="flex">
-                <textarea name="ajoutPref" id="ajoutPref" cols="28" rows="15" placeholder="Autre préférences..."></textarea>
-            </div>   
-        </fieldset>
-        <input type="submit" value="Valider" class="lien" id="envoiCreateUser" name="submit">
-    </form>
-    <div class="titre">
-        <a href="/modifier-user" class="bgcolor2 lien"><img class="image-crud1" src="/assets/icones/modifier.jpg" alt="modifier espace">Modifier espace</a>
-        <button type="button" class="bgcolor1 lien" id="btValidation">Supprimer compte</button>
-    </div> 
-</section>
-<!--END : Espace utilisateur--> 
+    <!--START : Espace utilisateur--> 
+    <section class="recherche borderRech chauffeur" id="formUser">
+        <div class="containForm padding">
+            <fieldset id="immat" class="titre padding">
+                <legend>Immatriculation</legend>
+                <div class="padLeft">
+                    <label for="immatriculation">Plaque Immatriculation :</label>
+                    <input class="form-input" id="immatriculation" type="text" name="immatriculation" placeholder="BZ-845-YY" required>
+                </div><br>
+                <div class="padLeft">
+                    <label for="FirstImmat">Date 1ère Immat. :</label>
+                    <input class="form-input" id="FirstImmat" type="date" name="dateImmat" placeholder="01/11/2020" required>
+                </div><br/>
+            </fieldset>
+            <fieldset id="Véhicule" class="titre padding">
+                <legend>Véhicule</legend>
+                <div class="padLeft">
+                    <label for="marque">Marque :</label>
+                    <input class="form-input" id="marque" type="text" name="marque" placeholder="citroën" required>
+                </div><br>
+                <div class="padLeft">
+                    <label for="modele">Modèle :</label>
+                    <input class="form-input" id="modele" type="text" name="modele" placeholder="C5" required>
+                </div><br/>
+                <div class="padLeft">
+                    <label for="couleur">Couleur :</label>
+                    <input class="form-input" id="couleur" type="text" name="couleur" placeholder="noir" required>
+                </div><br/>
+                <div class="padLeft">
+                    <label for="electrique">Electrique :</label>
+                    <select class="form-input" id="electrique" name="ecolo" required>
+                        <option value="oui">Oui</option>
+                        <option value="non">Non</option>
+                    </select>
+                </div><br>
+                <div class="padLeft">
+                    <label for="places">Nombre de places disponibles :</label>
+                    <input class="form-input" id="places" type="number" name="places" placeholder="4" required>
+                </div><br/>
+            </fieldset>
+            <fieldset id="préférences" class="titre padding">
+                <legend>Préférences</legend>
+                <div class="padLeft">
+                    <label for="fumeur">Tabac :</label>
+                    <select class="form-input" id="fumeur" name="fumeur" required>
+                        <option value="fumeur">Fumeur</option>
+                        <option value="non-fumeur">Non-fumeur</option>
+                    </select>
+                </div><br> 
+                <div class="padLeft">
+                    <label for="animal">Animal accepté :</label>
+                    <select class="form-input" id="animal" name="animal" required>
+                        <option value="animal">Oui</option>
+                        <option value="no-animal">Non</option>
+                    </select>
+                </div><br> 
+                <div class="flex">
+                    <textarea name="ajoutPref" id="ajoutPref" cols="28" rows="15" placeholder="Autre préférences..."></textarea>
+                </div>   
+            </fieldset>
+        </div>  
+    </section>
+    <!--END : Espace utilisateur-->
+
+    <!--START : Boutons-->
+    <section class="formBouton">
+        <div class=" padB">
+            <input type="submit" value="Valider" class="lien" id="envoiCreateUser" name="submit">
+        </div>
+        <div class="titre padB">
+            <a href="/modifier-user" class="bgcolor2 lien"><img class="image-crud1" src="/assets/icones/modifier.jpg" alt="modifier espace">Modifier espace</a>
+            <button type="button" class="bgcolor1 lien" id="btValidation">Supprimer compte</button>
+        </div>
+        <a href="/modifier-mp" class="lien3">Mot de passe oublié Cliquez ici</a>
+    </section>
+    <!--END : Boutons-->
+</form>
+ 

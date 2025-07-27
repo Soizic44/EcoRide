@@ -7,6 +7,7 @@ const inputMarque = document.getElementById("marque");
 const inputModele = document.getElementById("modele");
 const inputCouleur = document.getElementById("couleur");
 const inputElectrique = document.getElementById("electrique");
+const inputPlaces = document.getElementById("places");
 const inputFumeur = document.getElementById("fumeur");
 const inputAnimal = document.getElementById("animal");
 const btnValidation = document.getElementById("envoiCreateUser");
@@ -16,7 +17,8 @@ inputFirstImmat.addEventListener("keyup", validateForm);
 inputMarque.addEventListener("keyup", validateForm);
 inputModele.addEventListener("keyup", validateForm);
 inputCouleur.addEventListener("keyup", validateForm); 
-inputElectrique.addEventListener("keyup", validateForm); 
+inputElectrique.addEventListener("keyup", validateForm);
+inputPlaces.addEventListener("keyup", validateForm); 
 inputFumeur.addEventListener("keyup", validateForm);
 inputAnimal.addEventListener("keyup", validateForm);
 
@@ -29,10 +31,11 @@ function validateForm(){
     const modeleOk = validateRequired(inputModele);
     const couleurOk = validateRequired(inputCouleur);
     const electOk = validateRequired(inputElectrique);
+    const placesOk = validateRequired(inputPlaces);
     const fumeurOk = validateRequired(inputFumeur);
     const animalOk = validateRequired(inputAnimal);
 
-    if(immatOk && firstImmatOk && marqueOk && modeleOk && couleurOk && electOk && fumeurOk && animalOk){
+    if(immatOk && firstImmatOk && marqueOk && modeleOk && couleurOk && placesOk && electOk && fumeurOk && animalOk){
         btnValidation.disabled = false;
     }
     else{
