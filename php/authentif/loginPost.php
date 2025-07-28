@@ -1,4 +1,10 @@
 <?php
+// Empêche les utilisateurs connectés d'accéder à la connexion
+if(isset($_SESSION["users"])){
+    header("Location: /cpte-user");
+    exit;
+}
+
 //Récuperation de mes variables de connexion
 $dsn = 'mysql:host=localhost;dbname=ecoride';
 $username = 'root';
@@ -45,7 +51,7 @@ if(isset($_POST['submit'])) {
             }
             // Connexion réussi : on connecte l'utilisateur et on démarre la session PHP
             //--> Ici c'est Javascript qui est programmer pour le faire
-            session_start(); 
+            session_start();
 
             //Stocker dans $_SESSION les informations de l'utilisateur
             $_SESSION["users"] = [
@@ -53,10 +59,11 @@ if(isset($_POST['submit'])) {
                 "pseudo" => $users['pseudo'],
                 "nom" => $users['nom'],
                 "prenom" => $users['prenom'],
-                "email" => $users['email']
+                "email" => $users['email'],
+                "role" => $users['role']
             ];
             //Redirection vers la page voulue
-            header("Location: /"); 
+            header("Location: /espace-user"); 
         }
         else{
             echo "Utilisateur introuvable, êtes-vous sûr de votre mail ?";

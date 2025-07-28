@@ -231,7 +231,7 @@ li.main{
     border-right-style: solid;
     border-width: 20px;
     border-color: #324400;
-    padding: 0px 10px 30px;
+    padding: 0px 10px 40px;
 }
 .separation{
     border-top: #777777 solid 1px;
@@ -389,8 +389,8 @@ transition: color .2s ease-in-out;
 .margTop{
     margin-top: 15px;
 }
-.pasB{
-    padding-bottom: 10px;
+.padB{
+    padding-bottom: 20px;
 }
 
 /*en cas de peu de contenu (page 404): garder footer en bas de page (margin-top: auto pour footer)*/

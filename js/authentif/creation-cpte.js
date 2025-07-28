@@ -1,5 +1,7 @@
 //Implémenter le JS de ma page
 const inputPseudo = document.getElementById("pseudo");
+const inputNom = document.getElementById("nom");
+const inputPrenom = document.getElementById("prenom");
 const inputMail = document.getElementById("email");
 const inputPassword = document.getElementById("password");
 const inputConfirmPw = document.getElementById("confirmPw");
@@ -8,7 +10,9 @@ const feedMail       = document.getElementById("feedMail");
 const feedPw         = document.getElementById("feedPw");
 const feedConfPw     = document.getElementById("feedConfPw");
 
-inputPseudo.addEventListener("keyup", validateForm); 
+inputPseudo.addEventListener("keyup", validateForm);
+inputNom.addEventListener("keyup", validateForm);
+inputPrenom.addEventListener("keyup", validateForm); 
 inputMail.addEventListener("keyup", validateForm);
 inputPassword.addEventListener("keyup", validateForm);
 inputConfirmPw.addEventListener("keyup", validateForm);
@@ -17,11 +21,13 @@ inputConfirmPw.addEventListener("keyup", validateForm);
 //Function permettant de valider tout le formulaire
 function validateForm(){
     const pseudoOk = validateRequired(inputPseudo);
+    const nomOk = validateRequired(inputNom);
+    const prenomOk = validateRequired(inputPRenom);
     const mailOk = validateMail(inputMail);
     const passwordOk = validateMp(inputPassword);
     const confirmPwOk = validateConfirmationMp(inputPassword, inputConfirmPw);
 
-    if(pseudoOk && mailOk && passwordOk && confirmPwOk){
+    if(pseudoOk && nomOk && prenomOk && mailOk && passwordOk && confirmPwOk){
         btnValidation.disabled = false;
     }
     else{

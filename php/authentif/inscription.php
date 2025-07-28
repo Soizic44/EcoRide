@@ -1,4 +1,9 @@
 <?php
+// Empêche les utilisateurs connectés d'accéder à l'inscription
+if(isset($_SESSION["users"])){
+    header("Location: /cpte-user");
+    exit;
+}
 //Récuperation de mes variables de connexion
 $dsn = 'mysql:host=localhost;dbname=ecoride';
 $username = 'root';
@@ -27,6 +32,7 @@ if(isset($_POST['submit'])){
         $pseudoForm = strip_tags($_POST['pseudo']);
         $nomForm = strip_tags($_POST['nom']);
         $prenomForm = strip_tags($_POST['prenom']);
+        $roleForm = strip_tags($_POST['role']);
         $emailForm = $_POST['email'];
         // Vérification que la valeur est bien un email
         if(!filter_var($emailForm, FILTER_VALIDATE_EMAIL)){
@@ -94,8 +100,19 @@ if(isset($_POST['submit'])){
         // Protection du dossier pour limiter la lecture, eciture et éxecution
         chmod($newfilename, 0644);
 
+        // Requete 1 Table preferences
+        $query1 = "INSERT INTO role (libelle) VALUES (:role)";
+        //Préparation de la requête d'insertion (SQL) pour Table role
+        $stmt = $pdo->prepare($query1);
         //Insertion des données saisies en base de données
-        $requete = $pdo->prepare("INSERT INTO users VALUES (0, :pseudo, :nom, :prenom, :photo, :email, :password)");
+        $stmt->bindParam(':role', $roleForm, PDO::PARAM_INT);
+        // Executer ma requete 1
+        $stmt->execute();
+        // Récupération de l'id role
+        $id_role = $pdo->lastInsertId();
+
+        // Requête 2 : Insertion des données saisies en base de données
+        $requete = $pdo->prepare("INSERT INTO users VALUES (0, :pseudo, :nom, :prenom :photo, :email, :password, :id_role)");
         $requete->execute(
             array(
                 "pseudo" => $pseudoForm,
@@ -104,14 +121,30 @@ if(isset($_POST['submit'])){
                 "photo" => $newname.$extension,
                 "email" => $emailForm,
                 "password" => $mdpForm,
+                "id_role" => $id_role
             )   
         );
 
         // Récupération de l'id de nouvel utilisateur
         $id_user = $pdo->lastInsertId();
 
+
+        // On démarre la session PHP
+        //--> Ici c'est Javascript qui est programmer pour le faire
+        session_start();
+
+        //Stocker dans $_SESSION les informations de l'utilisateur
+        $_SESSION["users"] = [
+            "idUser" => $id_user,
+            "pseudo" => $pseudoForm,
+            "nom" => $nomForm,
+            "prenom" => $prenomForm,
+            "email" => $emailForm,
+            "role" => $roleForm
+        ];
+
         //Redirection vers page 
-        header("Location: /espace-user");
+        header("Location: /connexion");
 
     }else{
         die("Le formulaire est imcomplet");
