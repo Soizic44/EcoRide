@@ -22,7 +22,7 @@ inputConfirmPw.addEventListener("keyup", validateForm);
 function validateForm(){
     const pseudoOk = validateRequired(inputPseudo);
     const nomOk = validateRequired(inputNom);
-    const prenomOk = validateRequired(inputPRenom);
+    const prenomOk = validateRequired(inputPrenom);
     const mailOk = validateMail(inputMail);
     const passwordOk = validateMp(inputPassword);
     const confirmPwOk = validateConfirmationMp(inputPassword, inputConfirmPw);

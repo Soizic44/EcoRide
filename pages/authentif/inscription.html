@@ -12,7 +12,7 @@
             <p>Vous avez déjà un  compte ?</p>
             <a href="/connexion" class="lien3">Connectez-vous ici !</a>
         </div>
-        <form action="/php/authentif/inscription.php" method="POST" enctype="multipart/form-data">
+        <form action="/php/authentif/news-cpte.php" method="POST" enctype="multipart/form-data">
             <fieldset class="padding">
                 <legend class="padding">Informations utilisateur</legend>
                 <div class="titre">
@@ -33,6 +33,7 @@
                         <option value="chauffeur">Chauffeur</option>
                         <option value="passager">Passager</option>
                         <option value="chauffeur/passager">Chauffeur et Passager</option>
+                        <option value="employe" data-show="admin">Employé</option>
                     </select>
                 </div><br>
                 <div class="titre">

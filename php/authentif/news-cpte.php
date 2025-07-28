@@ -1,7 +1,7 @@
 <?php
 // Empêche les utilisateurs connectés d'accéder à l'inscription
 if(isset($_SESSION["users"])){
-    header("Location: /cpte-user");
+    header("Location: /");
     exit;
 }
 //Récuperation de mes variables de connexion
@@ -46,10 +46,10 @@ if(isset($_POST['submit'])){
         $stmt->execute();
 
         //Est-ce que l’utilisateur (mail) existe ?
-        if($stmt->rowCount() > 0){
+        if($stmt->rowCount() > 0){  
             die("Cette adresse email est déjà utilisée");
             //Redirection vers page 
-            header("Location: /creation-cpt");
+            header("Location: /");
         }
 
         //vérification que les 2 mots de passe sont identique
@@ -100,19 +100,24 @@ if(isset($_POST['submit'])){
         // Protection du dossier pour limiter la lecture, eciture et éxecution
         chmod($newfilename, 0644);
 
-        // Requete 1 Table preferences
-        $query1 = "INSERT INTO role (libelle) VALUES (:role)";
-        //Préparation de la requête d'insertion (SQL) pour Table role
-        $stmt = $pdo->prepare($query1);
-        //Insertion des données saisies en base de données
-        $stmt->bindParam(':role', $roleForm, PDO::PARAM_INT);
-        // Executer ma requete 1
-        $stmt->execute();
-        // Récupération de l'id role
-        $id_role = $pdo->lastInsertId();
+        // Récupérer l'id_role en fonction de la valeur saisie dans le formulaire
+        $roleForm = $_POST['role'];
+        switch ($roleForm) {
+        case "passager":
+            $id_role = 4;
+            break;
+        case "chauffeur/passager":
+            $id_role = 5;
+            break;
+        case "employe":
+            $id_role = 2;
+            break;
+        default:
+            $id_role = 3;
+        }
 
-        // Requête 2 : Insertion des données saisies en base de données
-        $requete = $pdo->prepare("INSERT INTO users VALUES (0, :pseudo, :nom, :prenom :photo, :email, :password, :id_role)");
+        // Insertion des données saisies en base de données
+        $requete = $pdo->prepare("INSERT INTO users VALUES (0, :pseudo, :nom, :prenom, :photo, :email, :password, :id_role)");
         $requete->execute(
             array(
                 "pseudo" => $pseudoForm,
@@ -127,7 +132,6 @@ if(isset($_POST['submit'])){
 
         // Récupération de l'id de nouvel utilisateur
         $id_user = $pdo->lastInsertId();
-
 
         // On démarre la session PHP
         //--> Ici c'est Javascript qui est programmer pour le faire
@@ -150,4 +154,4 @@ if(isset($_POST['submit'])){
         die("Le formulaire est imcomplet");
     }
 }
-?>          
+?>       

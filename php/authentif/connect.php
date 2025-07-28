@@ -63,7 +63,7 @@ if(isset($_POST['submit'])) {
                 "role" => $users['role']
             ];
             //Redirection vers la page voulue
-            header("Location: /espace-user"); 
+            header("Location: /creat-user"); 
         }
         else{
             echo "Utilisateur introuvable, êtes-vous sûr de votre mail ?";
