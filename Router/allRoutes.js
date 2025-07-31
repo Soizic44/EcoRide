@@ -10,7 +10,7 @@ export const allRoutes = [
     new Route("/contact", "contact", "/pages/visiteur/contact.html", [], "/js/visiteur/contact.js"),
     new Route("/mail", "reponse mail", "/php/mail", []),
     new Route("/connexion", "Connexion", "/pages/authentif/connexion.html", ["disconnected"], "/js/authentif/connexion.js"),
-    new Route("/connect", "connexion", "/php/authentif/connect.php.html", []),
+    new Route("/connect", "connexion", "/php/authentif/connect.php", []),
     new Route("/deconnexion", "Déconnexion", "/php/authentif/deconnexion.php", ["admin", "employe", "chauffeur", "passager", "les2"]),
     new Route("/inscription", "Création de compte", "/pages/authentif/inscription.html", [], "/js/authentif/creation-cpte.js"),
     new Route("/news-cpte", "Création de compte", "/php/authentif/news-cpte.php", []),

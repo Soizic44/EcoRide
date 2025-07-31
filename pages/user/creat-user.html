@@ -30,6 +30,13 @@
     <!--START : Espace utilisateur--> 
     <section class="recherche borderRech chauffeur" id="formUser">
         <div class="containForm padding">
+            <fieldset id="identité" class="titre padding">
+                <legend>Identité chauffeur</legend>
+                <div class="padLeft">
+                    <label for="email">email :</label>
+                    <input class="form-input" id="email" type="text" name="email" placeholder="email@gmail.com" required>
+                </div><br>
+            </fieldset>
             <fieldset id="immat" class="titre padding">
                 <legend>Immatriculation</legend>
                 <div class="padLeft">
@@ -68,7 +75,7 @@
                 </div><br/>
             </fieldset>
             <fieldset id="préférences" class="titre padding">
-                <legend>Préférences</legend>
+                <legend>Préférences passagers</legend>
                 <div class="padLeft">
                     <label for="fumeur">Tabac :</label>
                     <select class="form-input" id="fumeur" name="fumeur" required>

@@ -74,9 +74,23 @@ function validateMp(input){
     }
 }
 
+// Appel de l'Api 
+//function callApi(){const url = "/connect.php"
+    // demande de recherche dans Api(fetch) puis au retour de reponse => convertion en tableau
+    //fetch(url).then(response => response.json()).then(data => {
+        //document.getElementById("btnConnexion").innerHTML = data})
+//}
+async function callApi(){
+    const url = "/connect.php"
+    const fetcher = await fetch(url)
+    const json = await fetcher.json()
+    console.log(json)
+}
+
 //Gestion de la connexion
 function checkCredentials(){
-    //Ici, il faudra appeler l'API pour vérifier les credentials en BDD
+    //Ici, on appel API pour vérifier les credentials en BDD
+    callApi();
 
     if(mailInput.value == "test@gmail.com" && passwordInput.value == "Password123."){
         //Il faudra récupérer le vrai token
@@ -85,10 +99,12 @@ function checkCredentials(){
         //placer ce token en cookie
         
         setCookie(RoleCookieName, "admin", 7);
-        window.location.replace("/");
+        window.location.replace("/profil");
     }
     else{
         mailInput.classList.add("invalid");
         passwordInput.classList.add("invalid");
     }
 }
+
+

@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
         $pseudoForm = strip_tags($_POST['pseudo']);
         $nomForm = strip_tags($_POST['nom']);
         $prenomForm = strip_tags($_POST['prenom']);
-        $roleForm = strip_tags($_POST['role']);
+        $roleForm = $_POST['role'];
         $emailForm = $_POST['email'];
         // Vérification que la valeur est bien un email
         if(!filter_var($emailForm, FILTER_VALIDATE_EMAIL)){
@@ -104,20 +104,20 @@ if(isset($_POST['submit'])){
         $roleForm = $_POST['role'];
         switch ($roleForm) {
         case "passager":
-            $id_role = 4;
+            $role = "passager";
             break;
         case "chauffeur/passager":
-            $id_role = 5;
+            $role = "chauffeur/passager";
             break;
         case "employe":
-            $id_role = 2;
+            $role = "employe";
             break;
         default:
-            $id_role = 3;
+            $role = "chauffeur";
         }
 
         // Insertion des données saisies en base de données
-        $requete = $pdo->prepare("INSERT INTO users VALUES (0, :pseudo, :nom, :prenom, :photo, :email, :password, :id_role)");
+        $requete = $pdo->prepare("INSERT INTO users VALUES (0, :pseudo, :nom, :prenom, :photo, :email, :password)");
         $requete->execute(
             array(
                 "pseudo" => $pseudoForm,
@@ -125,13 +125,25 @@ if(isset($_POST['submit'])){
                 "prenom" => $prenomForm,
                 "photo" => $newname.$extension,
                 "email" => $emailForm,
-                "password" => $mdpForm,
-                "id_role" => $id_role
+                "password" => $mdpForm
             )   
         );
 
         // Récupération de l'id de nouvel utilisateur
         $id_user = $pdo->lastInsertId();
+
+        // requete 2 Table role
+        $query2 = "INSERT INTO role (libelle, idUser) 
+        VALUES (:libelle, :idUser)";
+
+        //Préparation de la requête d'insertion (SQL) pour Table preferences
+        $stmt = $pdo->prepare($query2);
+        //Insertion des données saisies en base de données
+        $stmt->bindParam(':libelle', $role);
+        $stmt->bindParam(':idUser', $id_user, PDO::PARAM_INT);
+        // Executer ma requete 2
+        $stmt->execute();
+
 
         // On démarre la session PHP
         //--> Ici c'est Javascript qui est programmer pour le faire
@@ -139,12 +151,12 @@ if(isset($_POST['submit'])){
 
         //Stocker dans $_SESSION les informations de l'utilisateur
         $_SESSION["users"] = [
-            "idUser" => $id_user,
-            "pseudo" => $pseudoForm,
-            "nom" => $nomForm,
-            "prenom" => $prenomForm,
-            "email" => $emailForm,
-            "role" => $roleForm
+            "idUser" => $user ['id_user'],
+            "pseudo" => $user ['pseudo'],
+            "nom" => $user ['nom'],
+            "prenom" => $user ['prenom'],
+            "email" => $user ['email'],
+            "role" => $user ['role']
         ];
 
         //Redirection vers page 

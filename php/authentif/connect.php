@@ -55,15 +55,17 @@ if(isset($_POST['submit'])) {
 
             //Stocker dans $_SESSION les informations de l'utilisateur
             $_SESSION["users"] = [
-                "idUser" => $users['id_user'],
-                "pseudo" => $users['pseudo'],
-                "nom" => $users['nom'],
-                "prenom" => $users['prenom'],
-                "email" => $users['email'],
-                "role" => $users['role']
+                "idUser" => $user ["id_user"],
+                "pseudo" => $user ["pseudo"],
+                "nom" => $user ["nom"],
+                "prenom" => $user ["prenom"],
+                "email" => $user ["email"],
+                "role" => $user ["libelle"]
             ];
+            //var_dump($_SESSION);
+
             //Redirection vers la page voulue
-            header("Location: /creat-user"); 
+            header("Location: /");
         }
         else{
             echo "Utilisateur introuvable, êtes-vous sûr de votre mail ?";

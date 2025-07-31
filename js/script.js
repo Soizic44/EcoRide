@@ -2,8 +2,10 @@
 const tokenCookieName = "accesstoken";
 const RoleCookieName = "role";
 const signoutBtn = document.getElementById("deconnexion");
+const apiUrl = "https:127.0.0.1:8000/ecoride/";
 
 signoutBtn.addEventListener("click", signout);
+getInfosUser();
 
 //Gestion du rôle
 function getRole(){
@@ -28,17 +30,17 @@ function getToken(){
 
 //Méthode pour gestion des cookies
 function setCookie(name,value,days){
-    var expires = "";
+    let expires = "";
     if (days) {
-        var date = new Date();
+        let date = new Date();
         date.setTime(date.getTime() + (days*24*60*60*1000));
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
 function getCookie(name){
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
     for(var i=0;i < ca.length;i++) {
         var c = ca[i];
         while (c.charAt(0)==' ') c = c.substring(1,c.length);
@@ -113,4 +115,22 @@ function showAndHideElementsForRoles(){
                 break; 
         }
     })
+}
+
+// "Assainir" mon HTML quand on récupère des information externe
+function sanitizeHtml(text){
+    // Créez un élément HTML temporaire de type "div"
+    const tempHtml = document.createElement('div');
+    
+    // Affectez le texte reçu en tant que contenu texte de l'élément "tempHtml"
+    tempHtml.textContent = text;
+    
+    // Utilisez .innerHTML pour récupérer le contenu de "tempHtml"
+    // Cela va "neutraliser" ou "échapper" tout code HTML potentiellement malveillant
+    return tempHtml.innerHTML;
+}
+
+// Récupérer les informations utilisateurs
+function getInfosUser(){
+    console.log("Récupération info user");
 }
