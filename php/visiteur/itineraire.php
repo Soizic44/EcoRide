@@ -1,6 +1,18 @@
 <?php
 // Connexion PDO
-include_once "php/connexPhp.php";
+//Récuperation de mes variables de connexion
+$dsn = 'mysql:host=localhost;dbname=ecoride';
+$username = 'root';
+$password = '';
+
+//Création connexion PDO
+try{
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e){
+    die("Erreur de connexion à la base de données : ". $e->getMessage());
+}
 
 // Vérification
 // Vérification que tous les champs requis sont remplis
@@ -15,10 +27,14 @@ if(isset($_GET['start'], $_GET['arrival'], $_GET['date'])
     $date = strip_tags($_GET['date']);
 
     // Sécuriser le formulaire contre les failles html
-    $_GET["terme"] = htmlspecialchars($_GET["terme"]);
+    $start = htmlspecialchars($_GET["start"]);
+    $arrival = htmlspecialchars($_GET['arrival']);
+    $date = htmlspecialchars($_GET['date']);
 
     // Supprimer les espaces dans la requête de l'internaute
-    $terme = trim($terme);
+    $start = trim($_GET["start"]);
+    $arrival = trim($_GET['arrival']);
+    $date = trim($_GET['date']);
 
     
         

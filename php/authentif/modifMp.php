@@ -6,7 +6,19 @@ if(isset($_SESSION["users"])){
 }
 
 // Connexion PDO
-include_once "/php/connexPhp.php";
+//Récuperation de mes variables de connexion
+$dsn = 'mysql:host=localhost;dbname=ecoride';
+$username = 'root';
+$password = '';
+
+//Création connexion PDO
+try{
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e){
+    die("Erreur de connexion à la base de données : ". $e->getMessage());
+}
 
 //Soumission du formulaire
 if(isset($_POST['submit'])){   
@@ -46,26 +58,14 @@ if(isset($_POST['submit'])){
         }
 
         // Modification du mot de passe de la base de données par le nouveau
-        $query = "UPDATE users SET password = $mdpForm WHERE email = $mdpForm";
+        $query = "UPDATE users SET password = :password WHERE email = :email";
         $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':password', $mdpForm);
         $stmt->bindParam(':email', $emailForm);
         $stmt->execute();
 
         // Récupération de l'id de nouvel utilisateur
         $id_user = $pdo->lastInsertId();
-
-        // On démarre la session PHPaire
-        session_start();
-
-        //Stocker dans $_SESSION les informations de l'utilisateur
-        $_SESSION["users"] = [
-            "idUser" => $id_user,
-            "pseudo" => $pseudoForm,
-            "nom" => $nomForm,
-            "prenom" => $prenomForm,
-            "email" => $emailForm,
-            "role" => $roleForm
-        ];
 
         //Redirection vers page 
         header("Location: /connexion");

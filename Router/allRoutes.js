@@ -8,6 +8,7 @@ export const allRoutes = [
     new Route("/tableau-covoit", "Covoiturage disponibles", "/pages/visiteur/covoiturage/tableau-covoit.html", []),
     new Route("/detail-covoit", "Détail du covoiturage", "/pages/visiteur/covoiturage/detail-covoit.html", []),
     new Route("/contact", "contact", "/pages/visiteur/contact.html", [], "/js/visiteur/contact.js"),
+    new Route("/connexPhp.php", "include connexion", "/php/connexPhp.php", []),
     new Route("/mail", "reponse mail", "/php/mail", []),
     new Route("/connexion", "Connexion", "/pages/authentif/connexion.html", ["disconnected"], "/js/authentif/connexion.js"),
     new Route("/connect", "connexion", "/php/authentif/connect.php", []),
