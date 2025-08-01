@@ -199,6 +199,9 @@ li.main{
 .image-crud1{
     width: 25px;
 }
+.image-crud{
+    width: 15px;
+}
 
 /*couleur autre*/
 .bgcolor{
@@ -411,18 +414,22 @@ body{
 table{
     border-collapse: collapse;
     border: 2px solid rgb(140 140 140);
-    font-family: sans-serif;
-    font-size: 1rem;
-    letter-spacing: 1px;
     margin: 20px 0;
 }
 .tableau{
     display: inline-block;
     align-items: center;
 }
-th,td {
-  border: 1px solid rgb(160 160 160);
-  padding: 5px 8px;
+th,td{
+    border: 1px solid rgb(160 160 160);
+    padding: 5px 8px;
+    box-sizing: border-box;
+    max-width: 150px;
+    overflow: auto;
+    text-align: center;
+}
+tr{
+   font-size: 10px; 
 }
 
 /*Stylisation filtre*/
@@ -599,6 +606,12 @@ th,td {
     table{
         font-size: 1.2rem;
         margin: 20px 40px;
+    }
+    tr{
+        font-size: initial;
+    }
+    .image-crud{
+        width: 20px;
     }
     .flex{
         display: flex;

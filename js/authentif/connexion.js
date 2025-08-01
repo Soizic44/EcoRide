@@ -2,6 +2,7 @@
 const mailInput      = document.getElementById("email");
 const passwordInput  = document.getElementById("password");
 const btnSingin      = document.getElementById("btnConnexion");
+const connexForm     = document.getElementById("connexion");
 const feedMail       = document.getElementById("feedMail");
 const feedPw         = document.getElementById("feedPw");
 
@@ -75,11 +76,11 @@ function validateMp(input){
 }
 
 // Appel de l'Api 
-//function callApi(){const url = "/connect.php"
-    // demande de recherche dans Api(fetch) puis au retour de reponse => convertion en tableau
-    //fetch(url).then(response => response.json()).then(data => {
-        //document.getElementById("btnConnexion").innerHTML = data})
-//}
+    //function callApi(){const url = "/connect.php"
+        // demande de recherche dans Api(fetch) puis au retour de reponse => convertion en tableau
+        //fetch(url).then(response => response.json()).then(data => {
+            //document.getElementById("btnConnexion").innerHTML = data})
+    //}
 async function callApi(){
     const url = "/connect.php"
     const fetcher = await fetch(url)

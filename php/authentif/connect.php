@@ -55,12 +55,10 @@ if(isset($_POST['submit'])) {
 
             //Stocker dans $_SESSION les informations de l'utilisateur
             $_SESSION["users"] = [
-                "idUser" => $user ["id_user"],
-                "pseudo" => $user ["pseudo"],
-                "nom" => $user ["nom"],
-                "prenom" => $user ["prenom"],
-                "email" => $user ["email"],
-                "role" => $user ["libelle"]
+                "idUser" => $users["id_user"],
+                "pseudo" => $users["pseudo"],
+                "email" => $users["email"],
+                "role" => $role["libelle"]
             ];
             //var_dump($_SESSION);
 

@@ -1,7 +1,11 @@
 <?php
 //echo session_save_path();
 session_start();
-
+// Empêche les utilisateurs non connectés d'accéder à la déconnexion
+if(!isset($_SESSION["users"])){
+    header("Location: /");
+    exit;
+}
 // Traitement du formulaire
 
 // Vérifie si la méthode de la requête est POST
@@ -66,17 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $monUser = $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
-        // Récupération de l'id-user de la table users
-        //$query = "SELECT id_user FROM users WHERE email = :email";
-        //$stmt = $pdo->prepare($query);
-        //$stmt->bindParam(':email', $emailForm);
-        //$stmt->execute();
-        //$reponse = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        //$id_user = $reponse;
-
-        //foreach ($stmt as $row) {
-        //    print_r($row);
-        //}
 
         // requete 1 Table preferences
         $query1 = "INSERT INTO preferences (tabac, animal, preferences) 
@@ -117,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':email', $emailForm);
         $stmt->execute();
-        /* styles PDOStatement::fetch */
+        /* styles PDOStatement::fetch en paramètre "objet"*/
         $result = $stmt->fetch(PDO::FETCH_OBJ);
         print $result->id_user;
         print "\n";

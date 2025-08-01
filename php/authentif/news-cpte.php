@@ -2,8 +2,9 @@
 // Empêche les utilisateurs connectés d'accéder à l'inscription
 if(isset($_SESSION["users"])){
     header("Location: /");
-    exit;
+    exit;   
 }
+
 //Récuperation de mes variables de connexion
 $dsn = 'mysql:host=localhost;dbname=ecoride';
 $username = 'root';
@@ -34,9 +35,10 @@ if(isset($_POST['submit'])){
         $prenomForm = strip_tags($_POST['prenom']);
         $roleForm = $_POST['role'];
         $emailForm = $_POST['email'];
+        $_SESSION["error"] = [];
         // Vérification que la valeur est bien un email
         if(!filter_var($emailForm, FILTER_VALIDATE_EMAIL)){
-            die("L'adresse email est incorecte");
+            $_SESSION["error"][] = "L'adresse email est incorecte";
         }
 
         //Vérifier l’unicité de l’adresse mail
@@ -46,8 +48,8 @@ if(isset($_POST['submit'])){
         $stmt->execute();
 
         //Est-ce que l’utilisateur (mail) existe ?
-        if($stmt->rowCount() > 0){  
-            die("Cette adresse email est déjà utilisée");
+        if($stmt->rowCount() > 0){ 
+            $_SESSION["error"][] = "Cette adresse email est déjà utilisée"; 
             //Redirection vers page 
             header("Location: /");
         }
@@ -78,12 +80,12 @@ if(isset($_POST['submit'])){
         // Vérification de l'absence d'extension dans les clés de $allowed
         if(!array_key_exists($extension, $allowed) || !in_array($filetype, $allowed)){
             // Si l'extension et/ou le type est incorrect
-            die("Erreur, format de fichier incorrect");
+            $_SESSION["error"][] = "Erreur, format de fichier incorrect";
         }
 
         // Si le type est incorrect --> On le limite à 1Mo
         if($filesize > 1024 * 1024){
-            die("Fichier trop volumineux");
+            $_SESSION["error"][] = "Fichier trop volumineux";
         }
 
         // Après création fichier "htaccess" --> Copier l'ancier fichier dans dossier "photos"
@@ -94,7 +96,7 @@ if(isset($_POST['submit'])){
 
         // Et déplacer mon image dans dossier créé
         if(!move_uploaded_file($_FILES['image']['tmp_name'], $newfilename)){
-            die("L'upload a échoué");
+            $_SESSION["error"][] = "L'upload a échoué";
         }
 
         // Protection du dossier pour limiter la lecture, eciture et éxecution
@@ -151,19 +153,17 @@ if(isset($_POST['submit'])){
 
         //Stocker dans $_SESSION les informations de l'utilisateur
         $_SESSION["users"] = [
-            "idUser" => $user ['id_user'],
-            "pseudo" => $user ['pseudo'],
-            "nom" => $user ['nom'],
-            "prenom" => $user ['prenom'],
-            "email" => $user ['email'],
-            "role" => $user ['role']
+            "idUser" => $id_user,
+            "pseudo" => $pseudoForm,
+            "email" => $emailForm,
+            "role" => $role
         ];
 
         //Redirection vers page 
         header("Location: /connexion");
 
     }else{
-        die("Le formulaire est imcomplet");
+        $_SESSION["error"][] = "Le formulaire est imcomplet";
     }
 }
 ?>       
