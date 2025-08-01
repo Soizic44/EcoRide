@@ -55,17 +55,29 @@ Administrateur
 # Fonctionnalités Implémentées
 ✅ US Réalisées (80% du projet)
 •	US 1 : Page d'accueil avec présentation entreprise ✅
+
 •	US 2 : Menu de navigation responsive ✅
+
 •	US 3 : Vue des covoiturages avec recherche ✅
+
 •	US 4 : Filtres des covoiturages (prix, type véhicule) ✅
+
 •	US 5 : Vue détaillée d'un covoiturage ✅
+
 •	US 6 : Participer à un covoiturage : (Module de réservation en cours) ⚠️
+
 •	US 7 : Création de compte et authentification ✅
+
 •	US 8 : Espace utilisateur avec profil (en cours)
+
 •	US 9 : Saisir un voyage ✅
+
 •	US 10 : historique des covoiturages visuel✅ / fonctionnel (liaison avec Bdd en cours)
+
 •	US 11 : Démarrer et arrêter un covoiturage (en cours)
+
 •	US 12 : Espace employé (en cours)
+
 •	US 13 : Espace administrateur (en cours)
 
 ⚠️ Fonctionnalités principales non finalisées
@@ -99,87 +111,6 @@ Administrateur
 •	Serveur : Apache
 •	Hebergement : AlwaysData
 •	Déploiement : FileZilla
-
-
-## Structure du projet
-
-ecoride/
-├── assets/                              # Images insérées
-│   └── icones/                         # Icones insérés
-├── js/                                 # Dynamise du HTML via Javascript
-│   └── authentif/            
-|   |    ├── connexion.js         
-|   |    ├── creation-cpte.js         
-|   |    └── modifier-mp.js          
-│   ├── user/               
-|   |    ├── creat-employe.js         
-|   |    ├── creation-avis.js          
-|   |    ├── creation-voyage.js
-|   |    ├── espace-user.js         
-|   |    ├── historique-cov.js         
-|   |    ├── modif-employe.js          
-|   |    └── modifier-user.js          
-│   ├── visiteur/ 
-|   |    ├── accueil.js         
-|   |    ├── contact.js         
-|   |    └── formulaire-covoit.js            
-│   ├── scipt.js                            # index javascript
-├── pages/                                  # détails des pages HTML
-│   └── authentif/            
-|   |    ├── connexion.html         
-|   |    ├── inscription.html         
-|   |    └── modifier-mp.html         
-│   ├── user               
-|   |    ├── voyage/         
-|   |    |   ├── avis.html         
-|   |    |   ├── creation-voyage.html
-|   |    |   ├── credit.html         
-|   |    |   ├── historique-cov.html        
-|   |    |   ├── modifier-voyage.html        
-|   |    |   └── recap-avis.html          
-|   |    ├── creat-employe.html          
-|   |    ├── creat-user.html
-|   |    ├── modif-employe.html          
-|   |    ├── modif-user.html         
-|   |    ├── profil.php         
-|   |    └── table-employe.html          
-│   ├── visiteur               
-|   |    ├── covoiturage/         
-|   |    |   ├── detail-covoit.html          
-|   |    |   └── tableau-covoit.html
-|   |    |    
-|   |    ├── 404.html                       # Page d'erreur si pb du router
-|   |    ├── accueil.html
-|   |    ├── contact.html          
-|   |    ├── formulaire-covoit.html         
-|   |    └── mentions-legales.html         
-|   |    
-│   ├── photos/ 
-|   |    ├── htaccess                        # Dossier sécurisé
-|   |    └── photos entrée via formulaire   
-├── php/                                     # Détails des CRUD en php/formulaire
-│   └── authentif/            
-|   |    ├── connect.php         
-|   |    ├── deconnexion.php        
-|   |    ├── modifMp.php          
-|   |    └── news-cpte.php 
-│   ├── user               
-|   |    ├── connex-profil.php         
-|   |    └── new-user.php          
-|   ├── visiteur               
-|   |    └── itineraire.php        
-|   ├── voyage               
-|   |    └── creatCovoit.php              
-|   ├── mail.php   
-|   ├── test.php
-├── Router/
-|   ├── allRoutes.js    # On y retrouve toutes les routes de l'appli
-|   ├── Route.js        # Export des pages 
-|   |                    (fichier de transit entre le allRoute des pages et le fichier d'instruction)
-|   └── router.js         # Fichier d'instruction des routages
-│
-├── index.html
-└── style.css
 
 
 ## Charte Graphique
