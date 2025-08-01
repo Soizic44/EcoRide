@@ -82,7 +82,7 @@ function validateMp(input){
             //document.getElementById("btnConnexion").innerHTML = data})
     //}
 async function callApi(){
-    const url = "/connect.php"
+    const url = "https:127.0.0.1:8000/ecoride/php/authentif/connect.php"
     const fetcher = await fetch(url)
     const json = await fetcher.json()
     console.log(json)
@@ -91,9 +91,8 @@ async function callApi(){
 //Gestion de la connexion
 function checkCredentials(){
     //Ici, on appel API pour vérifier les credentials en BDD
-    callApi();
 
-    if(mailInput.value == "test@gmail.com" && passwordInput.value == "Password123."){
+    if(mailInput.value == "christophe.chaval@gmail.com" || "test@gmail.com"  && passwordInput.value == "Password123."){
         //Il faudra récupérer le vrai token
         const token = "lkjsdngfljsqdnglkjsdbglkjqskjgkfjgbqslkfdgbskldfgdfgsdgf";
         setToken(token);

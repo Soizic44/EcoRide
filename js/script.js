@@ -2,7 +2,7 @@
 const tokenCookieName = "accesstoken";
 const RoleCookieName = "role";
 const signoutBtn = document.getElementById("deconnexion");
-const apiUrl = "https:127.0.0.1:8000/ecoride/";
+const apiUrl = "https:127.0.0.1:8000/ecoride/php/authentif/connect.php";
 
 signoutBtn.addEventListener("click", signout);
 getInfosUser();
